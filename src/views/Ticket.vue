@@ -1,7 +1,7 @@
 <template>
   <body class="bg-primary bg-pattern" style="height: 100vh;display: flex;align-items: center">
       <div class="home-btn d-none d-sm-block">
-          <a href="index.html"><i class="mdi mdi-home-variant h2 text-white"></i></a>
+          <router-link to="/"><i class="mdi mdi-home-variant h2 text-white"></i></router-link>
       </div>
 
       <div class="account-pages" style="width:100%">
@@ -9,7 +9,7 @@
               <div class="row">
                   <div class="col-lg-12">
                       <div class="text-center mb-5">
-                          <a href="index.html" class="logo"><img src="../assets/images/logo-light.png" height="24" alt="logo"></a>
+                          <router-link to="/" class="logo"><img src="../assets/images/logo-light.png" height="24" alt="logo"></router-link>
                           <h5 class="font-size-16 text-white-50 mb-4">Selamat datang di halaman Pilih Tiket Event
                               Dieng</h5>
                       </div>

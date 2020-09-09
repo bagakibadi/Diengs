@@ -9,8 +9,8 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="text-center mb-5">
-                            <a href="index.html" class="logo"><img src="../assets/images/logo-light.png" height="24" alt="logo"></a>
-                            <h5 class="font-size-16 text-white-50 mb-4">Selamat datang di Halaman Registrasi Event Dieng</h5>
+                            <router-link to="/" class="logo"><img src="../assets/images/miceshadow.png" height="45" alt="logo"></router-link>
+                            <h5 class="font-size-16 text-white-50 mb-4">Selamat datang di halaman Registrasi Event Dieng</h5>
                         </div>
                     </div>
                 </div>
@@ -58,8 +58,8 @@
                                                     <button class="btn btn-success btn-block waves-effect waves-light" type="submit">Register</button>
                                                 </div>
                                                 <div class="mt-4 text-center">
-                                                    <a href="auth-login.html" class="text-muted"><i class="mdi
-                                                             mdi-account-circle mr-1"></i> Sudah punya akun ?</a>
+                                                    <router-link to="/login" class="text-muted"><i class="mdi
+                                                             mdi-account-circle mr-1"></i> Sudah punya akun ?</router-link>
                                                 </div>
                                             </div>
                                         </div>
@@ -90,6 +90,8 @@
 </template>
 
 <script>
+import Swal from 'sweetalert2'
+
 export default {
   data() {
     return {
@@ -101,17 +103,18 @@ export default {
       }
     }
   },
-  created() {
-    if (!localStorage.tipe) {
-      this.$router.push('/ticket')
-    }
-  },
+  // created() {
+  //   if (!localStorage.tipe) {
+  //     this.$router.push('/ticket')
+  //   }
+  // },
   methods: {
     daftars() {
       this.$store.dispatch('postApi', {
         url: 'register',
         data: {
           email: this.daftar.email,
+          username: this.daftar.email,
           password: this.daftar.password,
           first_name: this.daftar.first,
           last_name: this.daftar.last,
@@ -124,10 +127,25 @@ export default {
           if (res.data.status === 2) {
             // eslint-disable-next-line no-console
             console.log('salah')
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: 'Email Sudah Terdaftar',
+            })
           }
           if (res.data.email !== null) {
             // eslint-disable-next-line no-console
             console.log('bener')
+            Swal.fire({
+              position: 'center',
+              icon: 'success',
+              title: 'Register Success',
+              showConfirmButton: false,
+              timer: 1500
+            })
+            setTimeout(() => {
+              this.$router.push('/login')
+            }, 2000)
           }
         })
         .catch((err) => {

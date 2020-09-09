@@ -6,10 +6,34 @@ const Ticket = () => import ('@/views/Ticket')
 const Index = () => import ('@/views/Home')
 const Admin = () => import ('@/views/Admin')
 const Test = () => import ('@/views/Test')
+const Profile = () => import ('@/views/Profile')
+const Stages = () => import ('@/views/Stages')
+const Logout = () => import ('@/views/Logout')
+const Room = () => import ('@/views/Room')
 
 Vue.use(Router)
 
 const routes = [
+  {
+    path: '/admin/room',
+    name: 'Room',
+    component: Room
+  },
+  {
+    path: '/logout',
+    name: 'Logout',
+    component: Logout
+  },
+  {
+    path: '/profile',
+    name: 'Profile',
+    component: Profile
+  },
+  {
+    path: '/stages',
+    name: 'Stages',
+    component: Stages,
+  },
   {
     path: '/test',
     name: 'Test',

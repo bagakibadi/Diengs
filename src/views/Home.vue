@@ -1,12 +1,91 @@
 <template>
   <div class="containers">
     <!-- Navbars -->
-    <div class="navbars">
+    <!-- <div class="navbars">
       <div class="logos">
-        <img src="https://www.loket.com/images/logo-loket-white.png" alt="">
+        <img src="../assets/images/mice.png" alt="">
       </div>
-      <div class="searchs"></div>
-      <div class="infoacc"></div>
+      <div class="login">
+        <router-link class="btn btn-danger mr-3" to="/login">Login</router-link>
+        <router-link class="btn btn-danger mr-2" to="/register">Register</router-link>
+      </div>
+    </div> -->
+    <div class="teqtt">
+    <header id="page-topbar">
+                <div class="navbar-header">
+                    <div class="container-fluid">
+                        <div class="float-right">
+                          <div class="buttoner" v-if="!isLogin">
+                            <router-link class="btn btn-success login" to="/login">Login</router-link>
+                            <router-link class="btn btn-success" to="/register">Daftar</router-link>
+                          </div>
+                          <div class="dropdown d-inline-block" v-else>
+                              <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  <img class="rounded-circle header-profile-user" src="../assets/images/users/avatar-1.jpg" alt="Header Avatar">
+                                  <span class="d-none d-sm-inline-block ml-1">{{profileUser.first_name}}</span>
+                                  <i class="mdi mdi-chevron-down d-none d-sm-inline-block"></i>
+                              </button>
+                              <div class="dropdown-menu dropdown-menu-right">
+                                  <router-link class="dropdown-item" to="/profile"><i class="mdi mdi-face-profile font-size-16 align-middle mr-1"></i> Profile</router-link>
+                                  <div class="dropdown-divider"></div>
+                                  <router-link class="dropdown-item" to='/logout'><i class="mdi mdi-logout font-size-16 align-middle mr-1"></i> Logout</router-link>
+                              </div>
+                          </div>
+                        </div>
+
+                        <!-- LOGO -->
+                        <div class="navbar-brand-box">
+                            <router-link to="/" class="logo logo-dark">
+                                <span class="logo-sm">
+                                    <img src="../assets/images/miceshadow.png" alt="" height="45">
+                                </span>
+                                <span class="logo-lg" style="box-shadow: 0 0 5px 0">
+                                    <img src="../assets/images/miceshadow.png" alt="" height="45">
+                                </span>
+                            </router-link>
+
+                            <router-link to="/" class="logo logo-light">
+                                <span class="logo-sm">
+                                    <img src="../assets/images/miceshadow.png" alt="" height="45">
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="../assets/images/miceshadow.png" alt="" height="45">
+                                </span>
+                            </router-link>
+                        </div>
+                        <button type="button" class="btn btn-sm mr-2 font-size-16 d-lg-none header-item waves-effect waves-light" data-toggle="collapse" data-target="#topnav-menu-content">
+                            <i class="fa fa-fw fa-bars"></i>
+                        </button>
+
+                        <div class="topnav">
+                            <nav class="navbar navbar-light navbar-expand-lg topnav-menu">
+
+                                <!-- <div class="collapse navbar-collapse" id="topnav-menu-content">
+                                    <ul class="navbar-nav">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="dashboard.html">
+                                                Dashboard
+                                            </a>
+                                        </li>
+
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link" href="manajemen_user.html">
+                                               Manajemen User
+                                            </a>
+                                        </li>
+
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link" href="manajemen_room.html">
+                                               Manajemen Room
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div> -->
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </header>
     </div>
     <!--  -->
     <!--Carousel Wrapper-->
@@ -74,7 +153,7 @@
           </div>
         </div>
       </div>
-      <div class="topsells">
+      <!-- <div class="topsells">
         <h1>Top Selling</h1>
         <div class="cardsells">
           <div class="cards" v-for="i in 3" :key="i.id">
@@ -100,7 +179,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
     <div class="pluscntn bg-info">
       <div class="imgplus">
@@ -122,19 +201,46 @@
 </template>
 
 <script>
-export default {
+import { mapState } from 'vuex'
 
+export default {
+  data() {
+    return {
+      isLogin: localStorage.token
+    }
+  },
+  computed: {
+    ...mapState(['profileUser'])
+  },
+  mounted() {
+    this.$store.dispatch('getAcc')
+  }
 };
 </script>
 
 <style lang="scss" scoped>
-
+  .buttoner{
+    height: 70px;
+    display: flex;
+    align-items: center;
+    .login{
+      margin-right: 10px;
+    }
+  }
+  #page-topbar{
+    background: #f96565;
+  }
+  .teqtt{
+    height: 70px;
+    margin-bottom: 10px;
+  }
   .navbars{
     width: 100%;
     height: 70px;
-    background: #152955;
+    background: #f96565;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     margin-bottom: 10px;
   }
   .logos img{
@@ -269,6 +375,7 @@ export default {
           font-size: 28px;
           font-weight: bold;
           margin-bottom: 20px;
+          color: black;
         }
         p{
           font-size: 16px;

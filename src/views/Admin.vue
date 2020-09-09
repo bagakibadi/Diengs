@@ -37,7 +37,7 @@
                             <div class="dropdown d-inline-block">
                                 <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <img class="rounded-circle header-profile-user" src="../assets/images/users/avatar-1.jpg" alt="Header Avatar">
-                                    <span class="d-none d-sm-inline-block ml-1">Smith</span>
+                                    <span class="d-none d-sm-inline-block ml-1">{{profileUser.first_name}}</span>
                                     <i class="mdi mdi-chevron-down d-none d-sm-inline-block"></i>
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-right">
@@ -54,23 +54,23 @@
 
                         <!-- LOGO -->
                         <div class="navbar-brand-box">
-                            <a href="index.html" class="logo logo-dark">
+                            <router-link to="/" class="logo logo-dark">
                                 <span class="logo-sm">
-                                    <img src="../assets/images/logo-sm-dark.png" alt="" height="22">
+                                    <img src="../assets/images/miceshadow.png" alt="" height="45">
                                 </span>
-                                <span class="logo-lg">
-                                    <img src="../assets/images/logo-dark.png" alt="" height="20">
+                                <span class="logo-lg" style="box-shadow: 0 0 5px 0">
+                                    <img src="../assets/images/miceshadow.png" alt="" height="45">
                                 </span>
-                            </a>
+                            </router-link>
 
-                            <a href="index.html" class="logo logo-light">
+                            <router-link to="/" class="logo logo-light">
                                 <span class="logo-sm">
-                                    <img src="../assets/images/logo-sm-light.png" alt="" height="22">
+                                    <img src="../assets/images/miceshadow.png" alt="" height="45">
                                 </span>
                                 <span class="logo-lg">
-                                    <img src="../assets/images/logo-light.png" alt="" height="20">
+                                    <img src="../assets/images/miceshadow.png" alt="" height="45">
                                 </span>
-                            </a>
+                            </router-link>
                         </div>
 
                         <button type="button" class="btn btn-sm mr-2 font-size-16 d-lg-none header-item waves-effect waves-light" data-toggle="collapse" data-target="#topnav-menu-content">
@@ -83,21 +83,19 @@
                                 <div class="collapse navbar-collapse" id="topnav-menu-content">
                                     <ul class="navbar-nav">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="dashboard.html">
+                                            <router-link to="/" class="nav-link">
                                                 Dashboard
-                                            </a>
+                                            </router-link>
                                         </li>
 
                                         <li class="nav-item dropdown">
-                                            <a class="nav-link" href="manajemen_user.html">
-                                                Manajemen User
-                                            </a>
+                                            <router-link class="nav-link" to="/admin">Manajemen User</router-link>
                                         </li>
 
                                         <li class="nav-item dropdown">
-                                            <a class="nav-link" href="manajemen_room.html">
+                                            <router-link to="/admin/room" class="nav-link">
                                                 Manajemen Room
-                                            </a>
+                                            </router-link>
                                         </li>
                                     </ul>
                                 </div>
@@ -173,12 +171,12 @@
                                                     <tr v-for="item in allUser" :key="item.id">
                                                         <td>{{item.first_name}}</td>
                                                         <td>{{item.last_name}}</td>
-                                                        <td>{{item.email}}>/td>
+                                                        <td>{{item.email}}</td>
                                                         <td>{{item.username}}</td>
                                                         <td>1</td>
-                                                        <td class="d-flex ">
-                                                          <div class="btn btn-warning">Edit</div>
-                                                          <div class="btn btn-danger">Hapus</div>
+                                                        <td class="d-flex justify-content-around">
+                                                          <div class="btn btn-warning" @click="edit(item.id)" data-toggle="modal" data-target="#modalSubscriptionForm">Edit</div>
+                                                          <div class="btn btn-primary" @click="deleteUser(item.id)">Hapus</div>
                                                         </td>
                                                     </tr>
                                                 </tbody>
@@ -530,40 +528,151 @@
         <div class="rightbar-overlay"></div>
 
         <!-- JAVASCRIPT -->
+        <div class="modal fade" id="modalSubscriptionForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Edit User</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form @submit.prevent="updateUser">
+                    <div class="modal-body mx-3">
+                        <div class="md-form ">
+                            <label data-error="wrong" data-success="right" for="form3">First Name</label>
+                            <input type="text" id="form3" class="form-control validate" v-model="infoUser.first_name" required>
+                        </div>
 
+                        <div class="md-form ">
+                            <label data-error="wrong" data-success="right" for="form2">Last Name</label>
+                            <input type="text" id="form2" class="form-control validate" v-model="infoUser.last_name">
+                        </div>
+                        <div class="md-form ">
+                            <label data-error="wrong" data-success="right" for="form1">Email</label>
+                            <input type="email" id="form1" class="form-control validate" v-model="infoUser.email">
+                        </div>
+                        <div class="md-form ">
+                            <label data-error="wrong" data-success="right" for="form4">Password</label>
+                            <input type="password" id="form4" class="form-control validate" v-model="infoUser.pass">
+                        </div>
+
+                    </div>
+                    <div class="modal-footer d-flex">
+                        <button type="submit" class="btn btn-danger">Update <i class="fa fa-paper-plane-o ml-1"></i></button>
+                        <button class="btn btn-indigo" data-dismiss="modal">Tutup </button>
+                    </div>
+                </form>
+            </div>
+            </div>
+        </div>
     </body>
 </template>
 
 <script>
 // eslint-disable-next-line no-unused-vars
 import Axios from 'axios'
+import { mapState } from 'vuex'
+import Swal from 'sweetalert2'
 
 export default {
     data() {
         return {
-            allUser: [],
+            id: null,
+            infoUser: {}
         }
     },
     methods: {
-        getUser() {
-            Axios.get('http://api-dieng.primakom.co.id/register', {
+        deleteUser(id_user) {
+            Axios.delete(`${process.env.VUE_APP_API}admin/user/${id_user}`, {
                 headers: {
-                'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjMsImVtYWlsIjoiYmFndXNhQGFhLmNvbSIsInVzZXJuYW1lIjoiYmFndXNhQGFhLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJHBsUmV5bzlmbnZsYlBSS0ZEYVcudGVvdzkxL2tpMGp1YkdKay5BeGhFMFZmMC92alpRNW5tIiwiZmlyc3RfbmFtZSI6ImJhZ3VzIiwiaWF0IjoxNTk5NDgzNTY2fQ.1fAk4GDbAc5_Zl6-wDrBD0SOKUMUgSq6OpPvAv_lRxM'
-            }
-        })
-            .then((res) => {
-                // eslint-disable-next-line no-console
-                console.log(res)
-                this.allUser = res.data
+                    'Authorization': `${localStorage.token}`
+                }
             })
-            .catch((err) => {
-                // eslint-disable-next-line no-console
-                console.log(err)
-            })
+                .then((res) => {
+                    // eslint-disable-next-line no-console
+                    console.log(res)
+                    if (res.data.data === 1) {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Delete Success',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                        setTimeout(() => {
+                            this.$router.go('/admin')
+                        }, 2000)
+                    }
+                })
+                .catch((err) => {
+                    // eslint-disable-next-line no-console
+                    console.log(err)
+                })
         },
-        getUsers() {
-            this.$store.dispatch('getApi', {
-                url: 'register',
-                data: {
-                    headers: {
-                        'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjMsImVtYWlsIjoiYmFndXNhQGFhLmNvbSIsInVzZXJuYW1lIjoiYmFndXNhQGFhLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJHBsUmV5bzlmbnZsYlBSS0ZEYVcudGVvdzkxL2tpMGp1YkdKay5BeGhFMFZmMC92alpRNW5tIiwiZmlyc3RfbmFtZSI6ImJhZ
+        updateUser() {
+            Axios.post(`${process.env.VUE_APP_API}admin/user`, {
+                id: this.id,
+                first_name: this.infoUser.first_name,
+                last_name: this.infoUser.last_name,
+                email: this.infoUser.email,
+                username: this.infoUser.email,
+            })
+                .then((res) => {
+                    // eslint-disable-next-line no-console
+                    console.log(res)
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: 'Update Profile Success',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                    setTimeout(() => {
+                        this.$router.go('/admin')
+                    }, 2000)
+                })
+                .catch((err) => {
+                    // eslint-disable-next-line no-console
+                    console.log(err)
+                })
+        },
+        edit(id_user) {
+            // eslint-disable-next-line no-console
+            console.log(id_user)
+            this.id = id_user
+            const headers = {
+                'Authorization': `${localStorage.token}`
+            }
+            Axios.get(`${process.env.VUE_APP_API}admin/user/${id_user}`, {
+                headers: headers
+            })
+                .then((res) => {
+                    this.infoUser = res.data
+                })
+                .catch((err) => {
+                    // eslint-disable-next-line no-console
+                    console.log(err)
+                })
+        }
+    },
+    computed: {
+        ...mapState(['allUser']),
+        ...mapState(['profileUser'])
+    },
+    mounted() {
+        this.$store.dispatch('getUser')
+        this.$store.dispatch('getAcc')
+    },
+}
+</script>
+
+<style>
+  @import '../assets/css/bootstrap.min.css';
+  @import '../assets/css/icons.min.css';
+  @import '../assets/css/app.min.css';
+  @import '../assets/libs/nestable2/jquery.nestable.min.css';
+  @import '../assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css';
+  @import '../assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css';
+</style>
