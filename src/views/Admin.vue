@@ -555,7 +555,7 @@
                         </div>
                         <div class="md-form ">
                             <label data-error="wrong" data-success="right" for="form4">Password</label>
-                            <input type="password" id="form4" class="form-control validate" v-model="infoUser.pass">
+                            <input type="password" id="form4" placeholder="Kosongkan Jika Tidak Update Password" class="form-control validate" v-model="infoUser.pass">
                         </div>
 
                     </div>
@@ -612,6 +612,38 @@ export default {
                 })
         },
         updateUser() {
+            if (this.infoUser.pass.length > 0){
+                // eslint-disable-next-line no-console
+                console.log('asu')
+                Axios.post(`${process.env.VUE_APP_API}admin/user`, {
+                    id: this.id,
+                    first_name: this.infoUser.first_name,
+                    last_name: this.infoUser.last_name,
+                    email: this.infoUser.email,
+                    username: this.infoUser.email,
+                    password: this.infoUser.pass
+                })
+                    .then((res) => {
+                        // eslint-disable-next-line no-console
+                        console.log(res)
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Update Profile Success',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                        setTimeout(() => {
+                            this.$router.go('/admin')
+                        }, 2000)
+                    })
+                    .catch((err) => {
+                        // eslint-disable-next-line no-console
+                        console.log(err)
+                    })
+            } else {
+                // eslint-disable-next-line no-console
+                console.log('mmek')
             Axios.post(`${process.env.VUE_APP_API}admin/user`, {
                 id: this.id,
                 first_name: this.infoUser.first_name,
@@ -637,6 +669,7 @@ export default {
                     // eslint-disable-next-line no-console
                     console.log(err)
                 })
+            }
         },
         edit(id_user) {
             // eslint-disable-next-line no-console
