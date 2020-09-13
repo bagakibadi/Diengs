@@ -10,7 +10,8 @@ export default new vuex.Store({
     user: null,
     allUser: [],
     profileUser: {},
-    url: null
+    url: null,
+    ongkir: []
   },
   mutations: {
     GET_USER(state, data) {
@@ -21,10 +22,25 @@ export default new vuex.Store({
     },
     GET_URL(state, data) {
       state.url = data
+    },
+    GET_ONGKIR(state, data) {
+      state.ongkir = data
     }
   },
   actions: {
     // eslint-disable-next-line no-unused-vars
+    getOngkir(context) {
+      return new Promise((resolve, reject) => {
+        Axios.get(`${process.env.VUE_APP_API}rajaongkir/provinsi`)
+          .then((res) => {
+            context.commit("GET_ONGKIR", res.data.rajaongkir.results)
+            resolve(res.data)
+          })
+          .catch((err) => {
+            reject(new Error (err))
+          })
+      })
+    },
     getAcc(context) {
       return new Promise((resolve, reject) => {
         Axios.get(`${process.env.VUE_APP_API}users/current`, {

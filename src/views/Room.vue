@@ -25,23 +25,23 @@
 
                         <!-- LOGO -->
                         <div class="navbar-brand-box">
-                            <a href="index.html" class="logo logo-dark">
+                            <router-link to="/" class="logo logo-dark">
                                 <span class="logo-sm">
-                                    <img src="../assets/images/logo-sm-dark.png" alt="" height="22">
+                                    <img src="../assets/images/miceshadow.png" alt="" height="45">
                                 </span>
-                                <span class="logo-lg">
-                                    <img src="../assets/images/logo-dark.png" alt="" height="20">
+                                <span class="logo-lg" style="box-shadow: 0 0 5px 0">
+                                    <img src="../assets/images/miceshadow.png" alt="" height="45">
                                 </span>
-                            </a>
+                            </router-link>
 
-                            <a href="index.html" class="logo logo-light">
+                            <router-link to="/" class="logo logo-light">
                                 <span class="logo-sm">
-                                    <img src="../assets/images/logo-sm-light.png" alt="" height="22">
+                                    <img src="../assets/images/miceshadow.png" alt="" height="45">
                                 </span>
                                 <span class="logo-lg">
-                                    <img src="../assets/images/logo-light.png" alt="" height="20">
+                                    <img src="../assets/images/miceshadow.png" alt="" height="45">
                                 </span>
-                            </a>
+                            </router-link>
                         </div>
 
                         <button type="button" class="btn btn-sm mr-2 font-size-16 d-lg-none header-item waves-effect waves-light" data-toggle="collapse" data-target="#topnav-menu-content">
@@ -82,9 +82,7 @@
             <!-- Start right Content here -->
             <!-- ============================================================== -->
             <div class="main-content">
-
                 <div class="page-content">
-                    
                     <!-- Page-Title -->
                     <div class="page-title-box">
                         <div class="container-fluid">
@@ -112,7 +110,7 @@
                                             </p>
                                             <form @submit.prevent="updateurl" class="form-row">
                                                 <div class="input-group col-sm-6">
-                                                    <input class="form-control" type="text" required v-model="url" placeholder="URL...">
+                                                    <input class="form-control" type="text" required v-model="url" placeholder="Masukin Link Embed Youtube...">
                                                     <div class="input-group-append">
                                                         <button type="submit" class="btn btn-info">Update URL</button>
                                                     </div>
@@ -155,6 +153,7 @@
 
 <script>
 import { mapState } from 'vuex'
+import Swal from 'sweetalert2'
 
 export default {
   data() {
@@ -173,7 +172,11 @@ export default {
         .then((res) => {
           // eslint-disable-next-line no-console
           console.log(res)
-          
+          Swal.fire(
+            'Update Url Berhasil',
+            // 'You clicked the button!',
+            'success'
+          )
         })
         .catch((err) => {
           // eslint-disable-next-line no-console

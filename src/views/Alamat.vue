@@ -267,7 +267,6 @@ export default {
       change: {
         password: '',
       },
-      prov: [],
       select: null
     }
   },
@@ -282,18 +281,6 @@ export default {
             // eslint-disable-next-line no-console
             console.log(res)
             this.profile = res.data
-        })
-        .catch((err) => {
-            // eslint-disable-next-line no-console
-            console.log(err)
-        })
-    },
-    getProv() {
-      Axios.get('https://api-dieng.primakom.co.id/rajaongkir/provinsi')
-        .then((res) => {
-            // eslint-disable-next-line no-console
-            console.log(res.data.rajaongkir.results)
-            this.prov = res.data.rajaongkir.results
         })
         .catch((err) => {
             // eslint-disable-next-line no-console
