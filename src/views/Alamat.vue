@@ -159,6 +159,14 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
+                                                  <label for="alamat">Alamat</label>
+                                                  <input type="email" class="form-control" id="alamat" aria-describedby="emailHelp" placeholder="Silahkan Masukan Alamat">
+                                                </div>
+                                                <div class="form-group">
+                                                  <label for="alamat">Alamat</label>
+                                                  <input type="email" class="form-control" id="alamat" aria-describedby="emailHelp" placeholder="Silahkan Masukan Alamat">
+                                                </div>
+                                                <div class="form-group">
                                                     <label for="provinsi">Provinsi</label>
                                                     <select class="form-control" id="provinsi" v-model="select">
                                                         <option v-for="(provs, index) in ongkir" 

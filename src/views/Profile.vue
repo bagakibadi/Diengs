@@ -50,28 +50,6 @@
 
                         <div class="topnav">
                             <nav class="navbar navbar-light navbar-expand-lg topnav-menu">
-
-                                <!-- <div class="collapse navbar-collapse" id="topnav-menu-content">
-                                    <ul class="navbar-nav">
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="dashboard.html">
-                                                Dashboard
-                                            </a>
-                                        </li>
-
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link" href="manajemen_user.html">
-                                               Manajemen User
-                                            </a>
-                                        </li>
-
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link" href="manajemen_room.html">
-                                               Manajemen Room
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div> -->
                             </nav>
                         </div>
                     </div>
@@ -113,62 +91,36 @@
                                             Untuk mengubah profile anda harap edit informasi dibawah ini
                                             </p>
                                             <form @submit.prevent="updateprofile">
-                                                <div class="row mb-2">
-                                                    <div class="input-group col-sm-6">
-                                                        <input class="form-control" type="text" required placeholder="Alamat..." v-model="profile.alamat">
-                                                        <div class="input-group-append">
-                                                            <span class="input-group-text">Alamat</span>
-                                                        </div>
-                                                    </div>
+                                                <div class="form-group col-sm-6">
+                                                    <label for="alamat">Alamat</label>
+                                                    <input type="text" class="form-control" id="alamat" placeholder="Silahkan Masukan Alamat">
                                                 </div>
-                                                <div class="row mb-2">
-                                                    <div class="input-group col-sm-6">
-                                                        <input class="form-control" type="text" required placeholder="No HP" v-model="profile.no_hp">
-                                                        <div class="input-group-append">
-                                                            <span class="input-group-text">No HP</span>
-                                                        </div>
-                                                    </div>
+                                                <div class="form-group col-sm-6">
+                                                    <label for="hp">No.Hp</label>
+                                                    <input type="number" class="form-control" id="hp" placeholder="Silahkan Masukan No.Hp">
                                                 </div>
-                                                <div class="row mb-2">
-                                                    <div class="input-group col-sm-6">
-                                                        <input class="form-control" type="text" required placeholder="Provinsi" v-model="profile.provinsi">
-                                                        <div class="input-group-append">
-                                                            <span class="input-group-text">Provinsi</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row mb-2">
-                                                    <div class="input-group col-sm-6">
-                                                        <input class="form-control" type="text" required placeholder="Kabupaten" v-model="profile.kabupaten">
-                                                        <div class="input-group-append">
-                                                            <span class="input-group-text">Kabupaten</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row mb-2">
-                                                    <div class="input-group col-sm-6">
-                                                        <input class="form-control" type="text" required placeholder="Kode Pos" v-model="profile.kode_pos">
-                                                        <div class="input-group-append">
-                                                            <span class="input-group-text">Kode Pos</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row mb-2">
-                                                    <div class="input-group col-sm-6">
-                                                        <input type="submit" class="btn btn-info">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
+                                                <div class="form-group col-sm-6">
                                                     <label for="provinsi">Provinsi</label>
-                                                    <select class="form-control" id="provinsi" v-model="select">
+                                                    <select class="form-control" id="provinsi" v-model="provinsi">
+                                                        <option selected>Silahkan Pilih Provinsi</option>
                                                         <option v-for="(provs, index) in ongkir" 
                                                         :key="index"
                                                         :value="provs.province_id">{{ provs.province }}
                                                         </option>
                                                     </select>
                                                 </div>
+                                                <div class="form-group col-sm-6">
+                                                    <label for="kota">Kabupaten</label>
+                                                    <select class="form-control" id="kota" v-model="kabupaten">
+                                                        <option selected>-Silahkan Pilih Kabupaten-</option>
+                                                        <!-- <option v-for="(provs, index) in ongkir" 
+                                                        :key="index"
+                                                        :value="provs.province_id">{{ provs.province }}
+                                                        </option> -->
+                                                    </select>
+                                                </div>
                                             </form>
-                                            <h5 class="header-title mt-4">Edit Kredensial User</h5>
+                                            <!-- <h5 class="header-title mt-4">Edit Kredensial User</h5>
                                             <p>Untuk mengubah kredensial user harap edit informasi dibawah ini</p>
                                             <form action="#" @submit.prevent="kredensialuser">
                                                 <div class="row mb-2">
@@ -211,7 +163,7 @@
                                                                                     btn-danger">
                                                     </div>
                                                 </div>
-                                            </form>
+                                            </form> -->
                                         </div>
                                     </div>
                                 </div>
@@ -258,17 +210,13 @@ export default {
         first: '',
         last: '',
       },
-      profile: {
-        // alamat: '',
-        // provinsi: '',
-        // kabupaten: '',
-        // pos: '',
-      },
+      profile: {},
       change: {
         password: '',
       },
       prov: [],
-      select: null
+      provinsi: null,
+      kabupaten: null
     }
   },
   methods: {
@@ -373,6 +321,10 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+  .submit{
+    padding: 10px 35px;
+    border-radius: 25px;
+    font-weight: bold;
+  }
 </style>

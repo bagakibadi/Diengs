@@ -110,7 +110,16 @@ export default {
         .then((res) => {
           // eslint-disable-next-line no-console
           console.log(res)
-          if (res.data.status === 3) {
+          if (res.data.valid === null) {
+            // eslint-disable-next-line no-console
+            console.log('blom valid')
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: 'Akun Anda Belum Diverifikasi'
+            })
+          }
+          else if (res.data.status === 3) {
             // eslint-disable-next-line no-console
             console.log('salah')
             Swal.fire({
@@ -119,7 +128,7 @@ export default {
               text: 'Email Atau Password Salah!',
             })
           }
-          if (res.data.accessToken) {
+          else if (res.data.accessToken) {
             localStorage.token = res.data.accessToken
           
             Swal.fire({
@@ -130,7 +139,7 @@ export default {
               timer: 1500
             })
             setTimeout(() => {
-              this.$router.push('/profile')
+              this.$router.push('/stages')
             }, 2000)
           }
         })
@@ -142,7 +151,7 @@ export default {
   },
   created() {
     if (localStorage.token) {
-      this.$router.push('/profile')
+      this.$router.push('/stages')
     }
   }
 }

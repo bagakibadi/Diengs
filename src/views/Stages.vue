@@ -1,58 +1,98 @@
 <template>
   <div class="containers">
     <div class="penampungnav">
+      <div class="layout-wrapper">
+      <header id="page-topbar" >
+                  <div class="navbar-header">
+                      <div class="container-fluid">
+                          <div class="float-right">
+                              <div class="dropdown d-inline-block">
+                                  <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      <img class="rounded-circle header-profile-user" src="../assets/images/users/avatar-1.jpg" alt="Header Avatar">
+                                      <span class="d-none d-sm-inline-block ml-1">{{profileUser.first_name}}</span>
+                                      <i class="mdi mdi-chevron-down d-none d-sm-inline-block"></i>
+                                  </button>
+                                  <div class="dropdown-menu dropdown-menu-right">
+                                      <!-- item-->
+                                      <router-link class="dropdown-item" style="padding: .4rem 1rem" to="/profile"><i class="mdi mdi-face-profile font-size-16 align-middle mr-1"></i> Profile</router-link>
+                                      <div class="dropdown-divider"></div>
+                                      <router-link class="dropdown-item" style="padding: .4rem 1rem" to='/logout'><i class="mdi mdi-logout font-size-16 align-middle mr-1"></i> Logout</router-link>
+                                  </div>
+                              </div>
+                          </div>
+
+                          <!-- LOGO -->
+                          <div class="navbar-brand-box">
+                              <router-link to="/" class="logo logo-dark">
+                                  <span class="logo-sm">
+                                      <img src="../assets/images/miceshadow.png" alt="" height="45">
+                                  </span>
+                                  <span class="logo-lg">
+                                      <img src="../assets/images/miceshadow.png" alt="" height="45">
+                                  </span>
+                              </router-link>
+
+                              <router-link to="/" class="logo logo-light">
+                                  <span class="logo-sm">
+                                      <img src="../assets/images/miceshadow.png" alt="" height="45">
+                                  </span>
+                                  <span class="logo-lg">
+                                      <img src="../assets/images/miceshadow.png" alt="" height="45">
+                                  </span>
+                              </router-link>
+                          </div>
+
+                          <button type="button" class="btn btn-sm mr-2 font-size-16 d-lg-none header-item waves-effect waves-light" data-toggle="collapse" data-target="#topnav-menu-content">
+                              <i class="fa fa-fw fa-bars"></i>
+                          </button>
+
+                          <div class="topnav">
+                              <nav class="navbar navbar-light navbar-expand-lg topnav-menu">
+                              </nav>
+                          </div>
+                      </div>
+                  </div>
+              </header>
+      </div>
+    </div>
+    <!-- <div class="penampungnav">
       <div class="navbar">
         <div class="logo">
-          <!-- <a href="https://mice.id/PanduanCHSE-MICE/" style="text-decoration:none"> -->
             <h2 class="logo-light" style="font-family: sans-serif;cursor:pointer" height="35">
               <b style="color: red;">CH</b>
               <b style="color: chocolate;">SE</b>
               <b style="color: dodgerblue;">MI</b>
               <b style="color: lightgreen;">CE</b>
             </h2>
-          <!-- </a> -->
         </div>
-        <div class="time">
-          <h1 id="time"></h1>
-        </div>
-        <div class="info">
-          <div class="profile">
-            <div class="clickprof" @click="showlogout">
-              <div><i class="fa fa-bars" style="font-size: 18px;margin-right: 15px;color: #717171;"></i></div>
-              <div class="profiles" >
-                <i class="fa fa-user" style="font-size:20px;color: white;"></i>
+        <div class="float-right">
+          <div class="dropdown d-inline-block">
+              <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <img class="rounded-circle header-profile-user" src="../assets/images/users/avatar-1.jpg" alt="Header Avatar">
+                  <span class="d-none d-sm-inline-block ml-1">{{profileUser.first_name}}</span>
+                  <i class="mdi mdi-chevron-down d-none d-sm-inline-block"></i>
+              </button>
+              <div class="dropdown-menu dropdown-menu-right">
+                  <router-link class="dropdown-item" to="/profile"><i class="mdi mdi-face-profile font-size-16 align-middle mr-1 test"></i> Profile</router-link>
+                  <div class="dropdown-divider"></div>
+                  <router-link class="dropdown-item" to='/logout'><i class="mdi mdi-logout font-size-16 align-middle mr-1 test"></i> Logout</router-link>
               </div>
-            </div>
-            <ul class="logout">
-              <li style="display: flex;flex-direction: column; justify-content: center;">
-                <div class="profileinside">
-                  <i class="fa fa-user opened"></i>
-                </div>
-                <div>
-                  <h1 class="nameprof">Bagus</h1>
-                </div>
-              </li>
-              <li style="background: whitesmoke;">
-                <a href="logout" style="text-decoration:none;"><h1><i class="fa fa-sign-out" style="font-size:20px"></i> Logout</h1></a>
-              </li>
-            </ul>
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <div class="section">
       <div class="content">
         <div class="logomobile">
           <img src="https://i.ibb.co/0njBn65/Layer-3-1.png" alt="">
-          <!-- <img src="https://i.ibb.co/bW9nsXv/Layer-4.png" style="top:-5px;" alt=""> -->
         </div>
         <div class="convention">
           <h1>Join Convention</h1>
           <button @click="join">Join</button>
         </div>
-        <h1>VIRTUAL EVENT CHSE MICE</h1>
+        <h1>VIRTUAL EVENT DIENG CULTURE VESTIVAL</h1>
         <!-- <iframe width="800" height="400" src="https://www.youtube.com/embed/4deVCNJq3qc?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-        <iframe :src="url" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/Oi2ygASXK6M?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
     <div class="section2">
@@ -222,15 +262,16 @@ export default {
     }
   },
   computed: {
-    ...mapState(['url'])
+    ...mapState(['url']),
+    ...mapState(['profileUser']),
   },
   mounted() {
     this.$store.dispatch('getApi', {
       url: 'videourl',
       mutation: 'GET_URL'
     })
+    this.$store.dispatch('getAcc')
   },
-  
   created() {
     if (!localStorage.token) {
       this.$router.push('/login')
@@ -256,43 +297,49 @@ export default {
 
 <style lang="scss" scoped>
 *{
-      padding: 0;
-      margin: 0;
-      font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-      font-size: 16px;
-      box-sizing: border-box;
-    }
-    .active{
+  padding: 0;
+  margin: 0;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+.active{
   border-bottom: 3px solid #000 !important;
 }
 .penampungnav{
   position: relative;
-  height: 100px;
+  height: 70px;
 }
-.navbar{
-  z-index: 2;
-  width: 100%;
-  height: 100px;
-  background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
-  display: flex;
-  align-items: center;
-  position: fixed;
+.page-topbar{
+  background: #f96565 !important;
 }
-.logo{
-  width: 250px;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.float-right{
+  margin-right: 50px;
 }
-.logo h2 b{
-  font-size: 30px;
-}
-.time{
-  padding: 10px 15px;
-  border-radius: 3px;
-  background: whitesmoke;
-}
+// .navbar{
+//   z-index: 2;
+//   width: 100%;
+//   height: 100px;
+//   background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+//   display: flex;
+//   align-items: center;
+//   position: fixed;
+// }
+// .logo{
+//   width: 250px;
+//   height: 100%;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
+// .logo h2 b{
+//   font-size: 30px;
+// }
+// .time{
+//   padding: 10px 15px;
+//   border-radius: 3px;
+//   background: whitesmoke;
+// }
 .judul{
   position: absolute;
   display: flex;
@@ -665,6 +712,9 @@ export default {
 }
 .showhide{
   display: block !important;
+}
+.test{
+  padding: .4rem 1rem !important;
 }
 @media only screen and (max-width: 600px) {
   iframe{

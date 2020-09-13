@@ -173,7 +173,7 @@
                                                         <td>{{item.last_name}}</td>
                                                         <td>{{item.email}}</td>
                                                         <td>{{item.username}}</td>
-                                                        <td>1</td>
+                                                        <td>{{item.valid}}</td>
                                                         <td class="d-flex justify-content-around">
                                                           <div class="btn btn-warning" @click="edit(item.id)" data-toggle="modal" data-target="#modalSubscriptionForm">Edit</div>
                                                           <div class="btn btn-primary" @click="deleteUser(item.id)">Hapus</div>
@@ -554,6 +554,10 @@
                             <input type="email" id="form1" class="form-control validate" v-model="infoUser.email">
                         </div>
                         <div class="md-form ">
+                            <label data-error="wrong" data-success="right" for="form5">Validation</label>
+                            <input type="text" id="form5" class="form-control validate" placeholder="Masukan 1 Jika Ingin Diaktifkan" v-model="infoUser.valid">
+                        </div>
+                        <div class="md-form ">
                             <label data-error="wrong" data-success="right" for="form4">Password</label>
                             <input type="password" id="form4" placeholder="Kosongkan Jika Tidak Update Password" class="form-control validate" v-model="infoUser.pass">
                         </div>
@@ -621,7 +625,8 @@ export default {
                     last_name: this.infoUser.last_name,
                     email: this.infoUser.email,
                     username: this.infoUser.email,
-                    password: this.infoUser.pass
+                    password: this.infoUser.pass,
+                    valid: this.infoUser.valid
                 })
                     .then((res) => {
                         // eslint-disable-next-line no-console
@@ -650,6 +655,7 @@ export default {
                 last_name: this.infoUser.last_name,
                 email: this.infoUser.email,
                 username: this.infoUser.email,
+                valid: this.infoUser.valid
             })
                 .then((res) => {
                     // eslint-disable-next-line no-console

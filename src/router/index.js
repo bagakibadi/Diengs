@@ -12,10 +12,16 @@ const Logout = () => import ('@/views/Logout')
 const Room = () => import ('@/views/Room')
 const Pembayaran = () => import ('@/views/Pembayaran')
 const Upload = () => import ('@/views/Upload')
+const Meeting = () => import ('@/components/Meeting')
 
 Vue.use(Router)
 
 const routes = [
+  {
+    path: '/meeting',
+    name: 'Meeting',
+    component: Meeting
+  },
   {
     path: '/uploadproof',
     name: 'Upload',
@@ -27,7 +33,7 @@ const routes = [
     component: Pembayaran
   },
   {
-    path: '/admin/room',
+    path: '/bos/room',
     name: 'Room',
     component: Room
   },
@@ -52,7 +58,7 @@ const routes = [
     component: Test
   },
   {
-    path: '/admin',
+    path: '/bos',
     name: 'Admin',
     component: Admin
   },

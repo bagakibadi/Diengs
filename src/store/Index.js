@@ -41,6 +41,19 @@ export default new vuex.Store({
           })
       })
     },
+    // eslint-disable-next-line no-unused-vars
+    getKota(context) {
+      return new Promise((resolve, reject) => {
+        Axios.get(`${process.env.VUE_APP_API}rajaongkir/kota/`)
+          .then((res) => {
+            context.commit("GET_KOTA", res.data.rajaongkir.results)
+            resolve(res.data)
+          })
+          .catch((err) => {
+            reject(new Error (err))
+          })
+      })
+    },
     getAcc(context) {
       return new Promise((resolve, reject) => {
         Axios.get(`${process.env.VUE_APP_API}users/current`, {
