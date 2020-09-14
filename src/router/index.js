@@ -89,6 +89,14 @@ const routes = [
     name: 'Index',
     component: Index
   },
+  {
+    path: '*',
+    name: 'Page Not Found',
+    component: () => import('@/views/PageNotFound.vue'),
+    meta: {
+      title: 'Halaman Tidak Ditemukan | Carrent'
+    }
+  }
 ];
 
 const router = new Router({

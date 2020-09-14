@@ -54,10 +54,14 @@
                                                 <div class="mt-4">
                                                     <button class="btn btn-success btn-block waves-effect waves-light" type="submit">Log In</button>
                                                 </div>
-                                                <div class="mt-4 text-center" v-if="!tipe">
+                                                <div class="mt-4 text-center" v-if="tipe === null">
                                                     <router-link to="/ticket" class="text-muted"><i class="mdi
                                                             mdi-account-circle mr-1"></i> Buat akun</router-link>
-                                                </div>                                                
+                                                </div>
+                                                <div class="mt-4 text-center" v-else>
+                                                    <!-- <router-link to="/ticket" class="text-muted"><i class="mdi -->
+                                                            <!-- mdi-account-circle mr-1"></i> Buat akun</router-link> -->
+                                                </div>
                                             </div>
                                         </div>
                                     </form>
