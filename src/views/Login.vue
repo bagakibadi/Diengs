@@ -44,23 +44,23 @@
                                                                 for="customControlInline">Ingat saya</label>
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-6">
+                                                    <!-- <div class="col-md-6">
                                                         <div class="text-md-right mt-3 mt-md-0">
                                                             <a href="#" class="text-muted"><i
                                                                     class="mdi mdi-lock"></i> Lupa Password ?</a>
                                                         </div>
-                                                    </div>
+                                                    </div> -->
                                                 </div>
                                                 <div class="mt-4">
                                                     <button class="btn btn-success btn-block waves-effect waves-light" type="submit">Log In</button>
                                                 </div>
-                                                <div class="mt-4 text-center" v-if="tipe === null">
-                                                    <router-link to="/ticket" class="text-muted"><i class="mdi
-                                                            mdi-account-circle mr-1"></i> Buat akun</router-link>
-                                                </div>
-                                                <div class="mt-4 text-center" v-else>
+                                                <div class="mt-4 text-center" v-if="!tipe">
                                                     <!-- <router-link to="/ticket" class="text-muted"><i class="mdi -->
                                                             <!-- mdi-account-circle mr-1"></i> Buat akun</router-link> -->
+                                                </div>
+                                                <div class="mt-4 text-center" v-else>
+                                                    <router-link to="/ticket" class="text-muted"><i class="mdi
+                                                            mdi-account-circle mr-1"></i> Buat akun</router-link>
                                                 </div>
                                             </div>
                                         </div>
@@ -87,8 +87,8 @@ export default {
       login: {
         email: '',
         password: '',
-        tipe: localStorage.tipe
-      }
+      },
+      tipe: localStorage.tipe
     }
   },
   methods: {
