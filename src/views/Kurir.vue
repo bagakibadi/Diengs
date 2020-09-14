@@ -367,7 +367,7 @@
                                                     </div>
                                                   </div>
                                                 </div>
-                                                <div class="col-lg-6">
+                                                <!-- <div class="col-lg-6">
                                                   <h3>Pengiriman POS</h3>
                                                   <div @click="pos1" class="cards col-lg-10 d-flex">
                                                     <div class="img">
@@ -382,7 +382,7 @@
                                                       <p>Rp. 20.000</p>
                                                       <p>7-8 Hari</p>
                                                     </div>
-                                                  </div>
+                                                  </div> -->
                                                   <!-- <div class="cards col-lg-12 d-flex">
                                                     <div class="img">
                                                       <img src="https://www.posindonesia.co.id/photos/1/Logo%20Pos%20Indonesia%20Kecil%20Warna%20Transparan.gif">
@@ -393,7 +393,7 @@
                                                     </div>
                                                     <hr>
                                                   </div> -->
-                                                </div>
+                                                <!-- </div> -->
                                             </div>
                                         </div>
                                     </div>

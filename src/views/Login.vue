@@ -4,7 +4,7 @@
             <router-link to="/"><i class="mdi mdi-home-variant h2 text-white"></i></router-link>
         </div>
 
-        <div class="account-pages pb-sm-5 pt-sm-5">
+        <div class="account-pages pb-sm-5 pt-sm-5 loginpage">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
@@ -178,14 +178,20 @@ export default {
   },
   created() {
     if (localStorage.token) {
-      this.$router.push('/stages')
+      this.$router.push('/profile')
     }
   }
 }
 </script>
 
 <style>
+
   @import '../assets/css/bootstrap.min.css';
   @import '../assets/css/icons.min.css';
   @import '../assets/css/app.min.css';
+  @media only screen and (max-width: 600px) {
+    .loginpage{
+      height: 100vh !important;
+    }
+  }
 </style>
