@@ -10,6 +10,7 @@
   "dependencies": {
     "@zoomus/websdk": "^1.8.0",
     "axios": "^0.20.0",
+    "bootstrap-vue": "^2.17.0",
     "core-js": "^2.6.5",
     "jquery": "^3.3.1",
     "sass": "^1.26.10",
