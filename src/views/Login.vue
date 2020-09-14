@@ -121,7 +121,7 @@ export default {
               text: 'Email Atau Password Salah!',
             })
           }
-          else if (res.data.accessToken) {
+          else if (res.data.tipe === 0) {
             localStorage.token = res.data.accessToken
           
             Swal.fire({
@@ -133,6 +133,33 @@ export default {
             })
             setTimeout(() => {
               this.$router.push('/stages')
+            }, 2000)
+          }
+          else if (res.data.tipe === 1 || res.data.tipe === 2) {
+            localStorage.token = res.data.accessToken
+          
+            Swal.fire({
+              position: 'center',
+              icon: 'success',
+              title: 'Login Success',
+              showConfirmButton: false,
+              timer: 1500
+            })
+            setTimeout(() => {
+              this.$router.push('/profile')
+            }, 2000)
+          }
+          else{
+            localStorage.token = res.data.accessToken
+            Swal.fire({
+              position: 'center',
+              icon: 'success',
+              title: 'Login Success',
+              showConfirmButton: false,
+              timer: 1500
+            })
+            setTimeout(() => {
+              this.$router.push('/profile')
             }, 2000)
           }
         })

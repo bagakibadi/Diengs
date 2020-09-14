@@ -8,6 +8,8 @@ export default {
     delete localStorage.name;
     delete localStorage.tipe;
     delete localStorage.pass;
+    delete localStorage.provinsi;
+    delete localStorage.kabupaten;
     // delete localStorage.idUser;
     this.$router.push('/masuk');
   },

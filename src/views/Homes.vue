@@ -9,7 +9,7 @@
             </router-link>
           </div>
           <div class="buton">
-            <router-link to="/masuk">
+            <router-link @click="destroy" to="/masuk">
               <button class="btn btn-primary masuk">Masuk</button>
             </router-link>
           </div>
@@ -53,6 +53,7 @@ Festival Dieng 2020.</p>
 </template>
 
 <script>
+
 export default {
   data() {
     return {
@@ -60,6 +61,9 @@ export default {
     }
   },
   methods: {
+    destroy() {
+      delete localStorage.tipe
+    },
     gratis() {
       // this.tipe = 0
       this.$router.push('/ticket')
@@ -87,6 +91,7 @@ export default {
         height: 100px;
         width: 100%;
         .nav{
+          // background: white;
           position: fixed;
           width: 100%;
           height: 100px;
@@ -152,7 +157,20 @@ export default {
   }
   @media only screen and (max-width: 600px) {
     .logos{
-      display: none !important;
+      padding: 100px 0 0 0 !important;
+    }
+    .content{
+      width: 100% !important;
+      padding: 100px 20px 0 20px !important;
+    }
+    .content2{
+      margin-top: -130px;
+    }
+    .tengah{
+      padding: 0px 20px !important;
+    }
+    .footers{
+      padding-top: 20px !important;
     }
   }
 </style>

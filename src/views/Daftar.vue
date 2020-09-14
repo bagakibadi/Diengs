@@ -41,6 +41,10 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group form-group-custom mb-4">
+                                                    <input type="number" class="form-control" id="hp" required v-model="daftar.hp">
+                                                    <label for="hp">No. Hp</label>
+                                                </div>
+                                                <div class="form-group form-group-custom mb-4">
                                                     <input type="email" class="form-control" id="useremail" required v-model="daftar.email">
                                                     <label for="useremail">Email</label> 
                                                 </div>
@@ -100,6 +104,7 @@ export default {
         password: '',
         first: '',
         last: '',
+        hp: ''
       }
     }
   },
@@ -118,7 +123,8 @@ export default {
           password: this.daftar.password,
           first_name: this.daftar.first,
           last_name: this.daftar.last,
-          tipe: localStorage.tipe
+          tipe: localStorage.tipe,
+          no_hp: this.daftar.hp
         }
       })
         .then((res) => {
@@ -136,16 +142,31 @@ export default {
           if (res.data.email !== null) {
             // eslint-disable-next-line no-console
             console.log('bener')
-            Swal.fire({
-              position: 'center',
-              icon: 'success',
-              title: 'Register Success',
-              showConfirmButton: false,
-              timer: 1500
-            })
-            setTimeout(() => {
-              this.$router.push('/masuk')
-            }, 2000)
+            if (localStorage.tipe === 0) {
+              Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Register Success',
+                showConfirmButton: false,
+                timer: 1500
+              })
+              setTimeout(() => {
+                this.$router.push('/masuk')
+              }, 2000)
+            }
+            if (localStorage.tipe !== 0) {
+              localStorage.token = res.data.accessToken
+              Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Register Success',
+                showConfirmButton: false,
+                timer: 1500
+              })
+              setTimeout(() => {
+                this.$router.push('/profile')
+              }, 2000)
+            }
           }
         })
         .catch((err) => {

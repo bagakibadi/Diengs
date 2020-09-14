@@ -4,7 +4,7 @@
       <div class="layout-wrapper">
       <header id="page-topbar" >
                   <div class="navbar-header">
-                      <div class="container-fluid">
+                      <div class="container-fluid" style="display: flex;flex-direction: row-reverse;justify-content:space-between">
                           <div class="float-right">
                               <div class="dropdown d-inline-block">
                                   <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -22,7 +22,7 @@
                           </div>
 
                           <!-- LOGO -->
-                          <div class="navbar-brand-box">
+                          <div class="navbar-brand-box logos">
                               <router-link to="/" class="logo logo-dark">
                                   <span class="logo-sm">
                                       <img src="../assets/images/miceshadow.png" alt="" height="45">
@@ -43,13 +43,7 @@
                           </div>
 
                           <button type="button" class="btn btn-sm mr-2 font-size-16 d-lg-none header-item waves-effect waves-light" data-toggle="collapse" data-target="#topnav-menu-content">
-                              <i class="fa fa-fw fa-bars"></i>
                           </button>
-
-                          <div class="topnav">
-                              <nav class="navbar navbar-light navbar-expand-lg topnav-menu">
-                              </nav>
-                          </div>
                       </div>
                   </div>
               </header>
@@ -83,12 +77,13 @@
     </div> -->
     <div class="section">
       <div class="content">
-        <div class="logomobile">
+        <!-- <div class="logomobile">
           <img src="https://i.ibb.co/0njBn65/Layer-3-1.png" alt="">
-        </div>
+        </div> -->
         <div class="convention">
           <h1>Join Convention</h1>
-          <button @click="join">Join</button>
+          <button class="desktop" @click="join">Join</button>
+          <button class="mobile"><a href="https://so.mice.id/5">Join</a></button>
         </div>
         <h1>VIRTUAL EVENT DIENG CULTURE VESTIVAL</h1>
         <!-- <iframe width="800" height="400" src="https://www.youtube.com/embed/4deVCNJq3qc?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
@@ -99,7 +94,7 @@
       <div class="content2">
         <div class="schedule">
           <div class="judulschedule">
-            <h1>Even Stage CHSE MICE</h1>
+            <h1>Event Dieng Culture Festival</h1>
           </div>
           <div class="contentschedule">
           <div class="judulevent">
@@ -182,7 +177,7 @@
         </div>
         <div class="day">
           <div class="judulday">
-            <h1>Main Stage CHSE</h1>
+            <h1>Main Dieng Culture Festival</h1>
           </div>
           <div class="paragraf">
             <p>Panduan Pelaksanaan Kebersihan, Keselamatan serta Kelestarian Lingkungan
@@ -274,7 +269,7 @@ export default {
   },
   created() {
     if (!localStorage.token) {
-      this.$router.push('/login')
+      this.$router.push('/masuk')
     }
     Axios.get(`${process.env.VUE_APP_API}meeting/get_meeting`, {
         headers: {
@@ -716,7 +711,22 @@ export default {
 .test{
   padding: .4rem 1rem !important;
 }
+.desktop{
+  display: block;
+}
+.mobile{
+  display: none;
+}
 @media only screen and (max-width: 600px) {
+  .logos{
+    margin-left: -250px;
+  }
+  .desktop{
+    display: none !important;
+  }
+  .mobile{
+    display: block !important;
+  }
   iframe{
     width: 96% !important;
     height: 300px;

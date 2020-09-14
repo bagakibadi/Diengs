@@ -234,7 +234,7 @@
                                                         </div>
                                                     </div>
                                                     <div>
-                                                        <button type="button" class="btn btn-light waves-effect waves-light mr-2">Cancle</button>
+                                                        <button type="button" class="btn btn-light waves-effect waves-light mr-2">Batal</button>
                                                         <button type="button" class="btn btn-info waves-effect waves-light">Selanjutnya</button>
                                                         <!-- <button type="button" class="btn btn-info waves-effect waves-light ">Selanjutnya</button> -->
                                                     </div>

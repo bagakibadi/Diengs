@@ -93,12 +93,12 @@
                                             <form @submit.prevent="updateprofile">
                                                 <div class="form-group col-sm-6">
                                                     <label for="alamat">Alamat</label>
-                                                    <input type="text" class="form-control" id="alamat" placeholder="Silahkan Masukan Alamat">
+                                                    <input type="text" class="form-control" id="alamat" placeholder="Silahkan Masukan Alamat" v-model="profile.alamat">
                                                 </div>
-                                                <div class="form-group col-sm-6">
+                                                <!-- <div class="form-group col-sm-6">
                                                     <label for="hp">No.Hp</label>
-                                                    <input type="number" class="form-control" id="hp" placeholder="Silahkan Masukan No.Hp">
-                                                </div>
+                                                    <input type="number" class="form-control" id="hp" placeholder="Silahkan Masukan No.Hp" v-model="profile.hp">
+                                                </div> -->
                                                 <div class="form-group col-sm-6">
                                                     <label for="provinsi">Provinsi</label>
                                                     <select class="form-control" id="provinsi" v-model="provinsi">
@@ -121,56 +121,12 @@
                                                 </div>
                                                 <div class="form-group col-sm-6">
                                                     <label for="kodepos">Kode Pos</label>
-                                                    <input type="text" class="form-control" id="kodepos" placeholder="Silahkan Masukan Kode Pos">
+                                                    <input type="text" class="form-control" id="kodepos" placeholder="Silahkan Masukan Kode Pos" v-model="profile.pos">
                                                 </div>
                                                 <div>
                                                     <button type="submit" class="btn btn-primary" style="width:200px;height:45px;border-radius:25px">Submit</button>
                                                 </div>
                                             </form>
-                                            <!-- <h5 class="header-title mt-4">Edit Kredensial User</h5>
-                                            <p>Untuk mengubah kredensial user harap edit informasi dibawah ini</p>
-                                            <form action="#" @submit.prevent="kredensialuser">
-                                                <div class="row mb-2">
-                                                    <div class="input-group col-sm-6">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text">First Name</span>
-                                                        </div>
-                                                        <input class="form-control" type="text" placeholder="First Name..." v-model="user.first">
-                                                    </div>
-                                                </div>
-                                                <div class="row mb-2">
-                                                    <div class="input-group col-sm-6">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text">Last Name</span>
-                                                        </div>
-                                                        <input class="form-control" type="text" placeholder="Last Name..." v-model="user.last">
-                                                    </div>
-                                                </div>
-                                                <div class="row mb-2">
-                                                    <div class="input-group col-sm-6">
-                                                        <input type="submit" value="Update Kredensial" class="btn
-                                                        btn-warning">
-                                                    </div>
-                                                </div>
-                                            </form>
-                                            <h5 class="header-title mt-4">Ganti Password</h5>
-                                            <p>Untuk mengganti password harap masukkan disini...</p>
-                                            <form action="#" @submit.prevent="changepass">
-                                                <div class="row mb-2">
-                                                    <div class="input-group col-sm-6">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text">Password</span>
-                                                        </div>
-                                                        <input class="form-control" type="password" placeholder="Password..." v-model="change.password">
-                                                    </div>
-                                                </div>
-                                                <div class="row mb-2">
-                                                    <div class="input-group col-sm-6">
-                                                        <input type="submit" value="Ganti Password" class="btn
-                                                                                    btn-danger">
-                                                    </div>
-                                                </div>
-                                            </form> -->
                                         </div>
                                     </div>
                                 </div>
@@ -267,7 +223,9 @@ export default {
           console.log(res)
           if (res.data.msg === "Berhasil") {
             // eslint-disable-next-line no-console
-            console.log('benar')
+            console.log(res)
+            localStorage.provinsi = this.provinsi
+            localStorage.kabupaten = this.kabupaten
             Swal.fire({
               position: 'center',
               icon: 'success',
@@ -276,11 +234,11 @@ export default {
               timer: 1500
             })
             setTimeout(() => {
-              if (localStorage.tipe == 1) {
-                this.$router.push('/pembayaran')
-              } else {
-                this.$router.push('/stages')
-              }
+            //   if (localStorage.tipe == 0) {
+            //       this.$router.push('/stages')
+            //   } else {
+            //       }
+                this.$router.push('/pilihkurir')
             }, 2000)
           }
         })

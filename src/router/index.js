@@ -1,4 +1,11 @@
 import Vue from 'vue'
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+
+// Install BootstrapVue
+Vue.use(BootstrapVue)
+// Optionally install the BootstrapVue icon components plugin
+Vue.use(IconsPlugin)
+
 import Router from 'vue-router'
 const Login = () => import ('@/views/Login')
 const Register = () => import ('@/views/Daftar')
@@ -15,10 +22,16 @@ const Upload = () => import ('@/views/Upload')
 const Meeting = () => import ('@/components/Meeting')
 const Kurir = () => import ('@/views/Kurir')
 const NewRegist = () => import ('@/views/NewRegist')
+const Pilihkurir = () => import ('@/views/Kurirs')
 
 Vue.use(Router)
 
 const routes = [
+  {
+    path: '/pilihkurir',
+    name: 'Kurirs',
+    component: Pilihkurir
+  },
   {
     path: '/kurir',
     name: 'Kurir',
