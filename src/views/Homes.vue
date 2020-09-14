@@ -37,8 +37,7 @@
         </div>
         <div class="isi">
         <p>Ada banyak hiburan yang bisa ditemukan dalam acara Dieng Culture Festival 2020, misalnya pagelaran kesenian
-        tradisional.</p> 
-<p>Lalu ada Aksi Dieng Bersih, Jazz Atas Awan, hingga Ritual Adat Pencukuran Rambut Gembel yang merupakan puncak acara dari
+        tradisional. Lalu ada Aksi Dieng Bersih, Jazz Atas Awan, hingga Ritual Adat Pencukuran Rambut Gembel yang merupakan puncak acara dari
 Festival Dieng 2020.</p>
         </div>
       </div>
