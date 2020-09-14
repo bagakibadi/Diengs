@@ -216,7 +216,7 @@
                                                                             <td v-if="tipe == 2">Cutlery Set, Magnet Kulkas dan Tshirt</td>
                                                                             <td>1</td>
                                                                             <td v-if="tipe == 1">Rp.40000</td>
-                                                                            <td v-if="tipe == 2">Rp.150000</td>
+                                                                            <td v-if="tipe == 2">Rp.130000</td>
                                                                         </tr>
                                                                         <tr>
                                                                             <th>Ongkos Kirim</th>
@@ -602,7 +602,7 @@ export default {
       tipe: localStorage.tipe,
       pilih: localStorage.pilih,
       hitung1: parseInt(localStorage.pilih) + 40000,
-      hitung2: parseInt(localStorage.pilih) + 150000,
+      hitung2: parseInt(localStorage.pilih) + 130000,
     }
   },
   methods: {

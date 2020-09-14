@@ -190,11 +190,7 @@
             <h1>Main Dieng Culture Festival</h1>
           </div>
           <div class="paragraf">
-            <p>Panduan Pelaksanaan Kebersihan, Keselamatan serta Kelestarian Lingkungan
-              (Cleanliness, Health, Safety and Environmental sustainability/ CHSE) penyelenggaraan kegiatan
-              Meeting, Incentive, Convention, Exhibition (MICE) yang diharapkan dapat menjadi acuan bagi
-              Asosiasi, Industri dan seluruh stakeholders MICE dalam menyelenggarakan kegiatan MICE di era
-              New Normal.
+            <p>Dieng Culture Festival merupakan agenda tahunan yang diselenggarakan oleh masyarakat Dieng dengan dua rangkaian acara unggulannya yaitu Prosesi Cukur Rambut Gembel dan Jazz Atas Awan. Sejak pertama kali diadakan pada 2010, Dieng Culture Festival tidak pernah sepi pengunjung. Menyesuaikan protokol kesehatan dalam menghadapi pandemi, Dieng Culture Festival 2020 hadir dengan konsep virtual.
             </p>
           </div>
           <div class="attachment">
@@ -202,7 +198,7 @@
               <h1>Attachment</h1>
             </div>
             <div class="centerattachment">
-              <a href="https://mice.id/PanduanCHSE-MICE//download/panduan.pdf" target="_blank"><i class="fa fa-file"></i></a>
+              <a href="https://mice.id/PanduanCHSE-MICE//download/panduan.pdf" target="_blank"><i class="fas fa-file"></i></a>
               <!-- <h1>Attachment File is Empty</h1>
               <p>Admin Booth hasn't attached any files yet.</p> -->
             </div>

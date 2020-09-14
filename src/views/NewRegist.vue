@@ -39,7 +39,7 @@
             <img src="../assets/images/icon_card_04.png" alt="">
             <h3>Paket B</h3>
             <p>Cutlery set, Magnet kulkas dan Tshirt</p>
-            <h4>Rp. 150.000</h4>
+            <h4>Rp. 130.000</h4>
           </div>
         </div>
       </div>
