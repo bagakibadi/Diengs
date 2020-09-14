@@ -54,8 +54,8 @@
                                                 <div class="mt-4">
                                                     <button class="btn btn-success btn-block waves-effect waves-light" type="submit">Log In</button>
                                                 </div>
-                                                <div class="mt-4 text-center" v-if="tipe !== null">
-                                                    <router-link to="/register" class="text-muted"><i class="mdi
+                                                <div class="mt-4 text-center" v-if="!tipe">
+                                                    <router-link to="/ticket" class="text-muted"><i class="mdi
                                                             mdi-account-circle mr-1"></i> Buat akun</router-link>
                                                 </div>                                                
                                             </div>
@@ -70,18 +70,6 @@
             </div>
         </div>
         <!-- end Account pages -->
-
-        <!-- JAVASCRIPT -->
-        <!-- <script src="assets/libs/jquery/jquery.min.js"></script>
-        <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="assets/libs/metismenu/metisMenu.min.js"></script>
-        <script src="assets/libs/simplebar/simplebar.min.js"></script>
-        <script src="assets/libs/node-waves/waves.min.js"></script>
-
-        <script src="https://unicons.iconscout.com/release/v2.0.1/script/monochrome/bundle.js"></script>
-
-        <script src="assets/js/app.js"></script> -->
-
     </body>
 </template>
 

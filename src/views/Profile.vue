@@ -124,7 +124,7 @@
                                                     <input type="text" class="form-control" id="kodepos" placeholder="Silahkan Masukan Kode Pos">
                                                 </div>
                                                 <div>
-                                                    <button type="submit" class="btn btn-primary" style="width:200px;height:35px;border-radius:25px">Submit</button>
+                                                    <button type="submit" class="btn btn-primary" style="width:200px;height:45px;border-radius:25px">Submit</button>
                                                 </div>
                                             </form>
                                             <!-- <h5 class="header-title mt-4">Edit Kredensial User</h5>
@@ -294,7 +294,7 @@ export default {
       // eslint-disable-next-line no-console
       console.log(this.profile)
       if(!localStorage.token) {
-          this.$router.push('/login')
+          this.$router.push('/masuk')
       } else {
           Axios.get(`${process.env.VUE_APP_API}profile`, {
                 headers: {

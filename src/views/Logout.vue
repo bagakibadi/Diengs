@@ -9,7 +9,7 @@ export default {
     delete localStorage.tipe;
     delete localStorage.pass;
     // delete localStorage.idUser;
-    this.$router.push('/login');
+    this.$router.push('/masuk');
   },
 };
 </script>

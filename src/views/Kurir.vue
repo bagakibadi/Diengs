@@ -37,7 +37,7 @@
                             <div class="dropdown d-inline-block">
                                 <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <img class="rounded-circle header-profile-user" src="../assets/images/users/avatar-1.jpg" alt="Header Avatar">
-                                    <span class="d-none d-sm-inline-block ml-1">{{profileUser.first_name}}</span>
+                                    <span class="d-none d-sm-inline-block ml-1">Smith</span>
                                     <i class="mdi mdi-chevron-down d-none d-sm-inline-block"></i>
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-right">
@@ -54,23 +54,23 @@
 
                         <!-- LOGO -->
                         <div class="navbar-brand-box">
-                            <router-link to="/" class="logo logo-dark">
+                            <a href="index.html" class="logo logo-dark">
                                 <span class="logo-sm">
-                                    <img src="../assets/images/miceshadow.png" alt="" height="45">
-                                </span>
-                                <span class="logo-lg" style="box-shadow: 0 0 5px 0">
-                                    <img src="../assets/images/miceshadow.png" alt="" height="45">
-                                </span>
-                            </router-link>
-
-                            <router-link to="/" class="logo logo-light">
-                                <span class="logo-sm">
-                                    <img src="../assets/images/miceshadow.png" alt="" height="45">
+                                    <img src="../assets/images/mice.png" alt="" height="22">
                                 </span>
                                 <span class="logo-lg">
-                                    <img src="../assets/images/miceshadow.png" alt="" height="45">
+                                    <img src="../assets/images/mice.png" alt="" height="20">
                                 </span>
-                            </router-link>
+                            </a>
+
+                            <a href="index.html" class="logo logo-light">
+                                <span class="logo-sm">
+                                    <img src="../assets/images/mice.png" alt="" height="22">
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="../assets/images/mice.png" alt="" height="20">
+                                </span>
+                            </a>
                         </div>
 
                         <button type="button" class="btn btn-sm mr-2 font-size-16 d-lg-none header-item waves-effect waves-light" data-toggle="collapse" data-target="#topnav-menu-content">
@@ -78,13 +78,209 @@
                         </button>
 
                         <div class="topnav">
+                            <nav class="navbar navbar-light navbar-expand-lg topnav-menu">
+
+                                <div class="collapse navbar-collapse" id="topnav-menu-content">
+                                    <ul class="navbar-nav">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="index.html">
+                                                Dashboard
+                                            </a>
+                                        </li>
+
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-uielement" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Elements <div class="arrow-down"></div>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-mega-menu-xl px-2" aria-labelledby="topnav-uielement">
+                                                <div class="row">
+                                                    <div class="col-lg-8">
+                                                        <div class="dropdown-item-text font-weight-semibold font-size-16">
+                                                            <div class="d-inline-block icons-sm mr-1"><i class="uim uim-box"></i></div> UI Elements</div>
+
+                                                        <div class="row">
+                                                            <div class="col-lg-5">
+                                                                <a href="ui-alerts.html" class="dropdown-item">Alerts</a>
+                                                                <a href="ui-badge.html" class="dropdown-item">Badge</a>
+                                                                <a href="ui-buttons.html" class="dropdown-item">Buttons</a>
+                                                                <a href="ui-cards.html" class="dropdown-item">Cards</a>
+                                                                <a href="ui-dropdowns.html" class="dropdown-item">Dropdowns</a>
+                                                                <a href="ui-navs.html" class="dropdown-item">Navs</a>
+                                                            </div>
+                                                            <div class="col-lg-5">
+                                                                <div>
+                                                                    <a href="ui-tabs-accordions.html" class="dropdown-item">Tabs &amp; Accordions</a>
+                                                                    <a href="ui-modals.html" class="dropdown-item">Modals</a>
+                                                                    <a href="ui-images.html" class="dropdown-item">Images</a>
+                                                                    <a href="ui-progressbars.html" class="dropdown-item">Progress Bars</a>
+                                                                    <a href="ui-pagination.html" class="dropdown-item">Pagination</a>
+                                                                    <a href="ui-popover-tooltips.html" class="dropdown-item">Popover & Tooltips</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-4">
+                                                        <div class="dropdown-item-text font-weight-semibold font-size-16">
+                                                            <div class="d-inline-block icons-sm mr-1"><i class="uim uim-layer-group"></i></div> Advanced UI</div>
+
+                                                        <div>
+                                                            <a href="advanced-alertify.html" class="dropdown-item">Alertify</a>
+                                                            <a href="advanced-rating.html" class="dropdown-item">Rating</a>
+                                                            <a href="advanced-nestable.html" class="dropdown-item">Nestable</a>
+                                                            <a href="advanced-rangeslider.html" class="dropdown-item">Range Slider</a>
+                                                            <a href="advanced-sweet-alert.html" class="dropdown-item">Sweet-Alert</a>
+                                                            <a href="advanced-lightbox.html" class="dropdown-item">Lightbox</a>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                        </li>
+
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-components" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Components <div class="arrow-down"></div>
+                                            </a>
+                                            <div class="dropdown-menu" aria-labelledby="topnav-components">
+                                                <div class="dropdown">
+                                                    <a class="dropdown-item dropdown-toggle arrow-none" href="#" id="topnav-email" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <div class="d-inline-block icons-sm mr-2"><i class="uim uim-comment-message"></i></div> Email
+                                                        <div class="arrow-down"></div>
+                                                    </a>
+                                                    <div class="dropdown-menu" aria-labelledby="topnav-email">
+                                                        <a href="email-inbox.html" class="dropdown-item">Inbox</a>
+                                                        <a href="email-read.html" class="dropdown-item">Email Read</a>
+                                                        <a href="email-compose.html" class="dropdown-item">Email Compose</a>
+                                                    </div>
+                                                </div>
+                                                <a href="calendar.html" class="dropdown-item">
+                                                    <div class="d-inline-block icons-sm mr-2"><i class="uim uim-schedule"></i></div> Calendar</a>
+                                                <div class="dropdown">
+                                                    <a class="dropdown-item dropdown-toggle arrow-none" href="#" id="topnav-icon" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <div class="d-inline-block icons-sm mr-2"><i class="uim uim-object-ungroup"></i></div>Icons
+                                                        <div class="arrow-down"></div>
+                                                    </a>
+                                                    <div class="dropdown-menu" aria-labelledby="topnav-icon">
+                                                        <a href="icons-materialdesign.html" class="dropdown-item">Material Design</a>
+                                                        <a href="icons-dripicons.html" class="dropdown-item">Dripicons</a>
+                                                        <a href="icons-fontawesome.html" class="dropdown-item">Font awesome 5</a>
+                                                        <a href="icons-themify.html" class="dropdown-item">Themify</a>
+                                                        <a href="icons-unicons.html" class="dropdown-item">Unicons - Dual Tone</a>
+                                                    </div>
+                                                </div>
+                                                <div class="dropdown">
+                                                    <a class="dropdown-item dropdown-toggle arrow-none" href="#" id="topnav-table" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <div class="d-inline-block icons-sm mr-2"><i class="uim uim-table"></i></div>Tables
+                                                        <div class="arrow-down"></div>
+                                                    </a>
+                                                    <div class="dropdown-menu" aria-labelledby="topnav-table">
+                                                        <a href="tables-basic.html" class="dropdown-item">Basic Tables</a>
+                                                        <a href="tables-datatable.html" class="dropdown-item">Data Tables</a>
+                                                        <a href="tables-responsive.html" class="dropdown-item">Responsive Table</a>
+                                                        <a href="tables-editable.html" class="dropdown-item">Editable Table</a>
+                                                    </div>
+                                                </div>
+                                                <div class="dropdown">
+                                                    <a class="dropdown-item dropdown-toggle arrow-none" href="#" id="topnav-form" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <div class="d-inline-block icons-sm mr-2"><i class="uim uim-document-layout-left"></i></div>Forms
+                                                        <div class="arrow-down"></div>
+                                                    </a>
+                                                    <div class="dropdown-menu" aria-labelledby="topnav-form">
+                                                        <a href="form-elements.html" class="dropdown-item">Form Elements</a>
+                                                        <a href="form-validation.html" class="dropdown-item">Form Validation</a>
+                                                        <a href="form-advanced.html" class="dropdown-item">Form Advanced</a>
+                                                        <a href="form-editors.html" class="dropdown-item">Form Editors</a>
+                                                        <a href="form-uploads.html" class="dropdown-item">Form File Upload</a>
+                                                        <a href="form-mask.html" class="dropdown-item">Form Mask</a>
+                                                        <a href="form-summernote.html" class="dropdown-item">Summernote</a>
+                                                    </div>
+                                                </div>
+
+                                                <div class="dropdown">
+                                                    <a class="dropdown-item dropdown-toggle arrow-none" href="#" id="topnav-chart" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <div class="d-inline-block icons-sm mr-2"><i class="uim uim-chart-pie"></i></div>Charts
+                                                        <div class="arrow-down"></div>
+                                                    </a>
+                                                    <div class="dropdown-menu" aria-labelledby="topnav-chart">
+                                                        <a href="charts-morris.html" class="dropdown-item">Morris</a>
+                                                        <a href="charts-apex.html" class="dropdown-item">Apex</a>
+                                                        <a href="charts-chartist.html" class="dropdown-item">Chartist</a>
+                                                        <a href="charts-chartjs.html" class="dropdown-item">Chartjs</a>
+                                                        <a href="charts-flot.html" class="dropdown-item">Flot</a>
+                                                        <a href="charts-sparkline.html" class="dropdown-item">Sparkline</a>
+                                                        <a href="charts-knob.html" class="dropdown-item">Jquery Knob</a>
+                                                    </div>
+                                                </div>
+
+                                                <div class="dropdown">
+                                                    <a class="dropdown-item dropdown-toggle arrow-none" href="#" id="topnav-maps" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <div class="d-inline-block icons-sm mr-2"><i class="uim uim-comment-plus"></i></div>Maps
+                                                        <div class="arrow-down"></div>
+                                                    </a>
+                                                    <div class="dropdown-menu" aria-labelledby="topnav-maps">
+                                                        <a href="maps-google.html" class="dropdown-item">Google map</a>
+                                                        <a href="maps-vector.html" class="dropdown-item">Vector map</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-more" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Extra pages <div class="arrow-down"></div>
+                                            </a>
+                                            <div class="dropdown-menu" aria-labelledby="topnav-more">
+                                                <div class="dropdown">
+                                                    <a class="dropdown-item dropdown-toggle arrow-none" href="#" id="topnav-auth" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        Authentication <div class="arrow-down"></div>
+                                                    </a>
+                                                    <div class="dropdown-menu" aria-labelledby="topnav-auth">
+                                                        <a href="auth-login.html" class="dropdown-item">Login</a>
+                                                        <a href="auth-register.html" class="dropdown-item">Register</a>
+                                                        <a href="auth-recoverpw.html" class="dropdown-item">Recover Password</a>
+                                                        <a href="auth-lock-screen.html" class="dropdown-item">Lock Screen</a>
+                                                    </div>
+                                                </div>
+                                                <div class="dropdown">
+                                                    <a class="dropdown-item dropdown-toggle arrow-none" href="#" id="topnav-utility" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        Utility <div class="arrow-down"></div>
+                                                    </a>
+                                                    <div class="dropdown-menu" aria-labelledby="topnav-utility">
+                                                        <a href="pages-starter.html" class="dropdown-item">Starter Page</a>
+                                                        <a href="pages-maintenance.html" class="dropdown-item">Maintenance</a>
+                                                        <a href="pages-comingsoon.html" class="dropdown-item">Coming Soon</a>
+                                                        <a href="pages-timeline.html" class="dropdown-item">Timeline</a>
+                                                        <a href="pages-gallery.html" class="dropdown-item">Gallery</a>
+                                                        <a href="pages-faqs.html" class="dropdown-item">FAQs</a>
+                                                        <a href="pages-pricing.html" class="dropdown-item">Pricing</a>
+                                                        <a href="pages-404.html" class="dropdown-item">Error 404</a>
+                                                        <a href="pages-500.html" class="dropdown-item">Error 500</a>
+                                                    </div>
+                                                </div>
+                                                <div class="dropdown">
+                                                    <a class="dropdown-item dropdown-toggle arrow-none" href="#" id="topnav-layout" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        Layouts <div class="arrow-down"></div>
+                                                    </a>
+                                                    <div class="dropdown-menu" aria-labelledby="topnav-layout">
+                                                        <a href="layouts-vertical.html" class="dropdown-item">Vertical</a>
+                                                        <a href="layouts-topbar-light.html" class="dropdown-item">Light Topbar</a>
+                                                        <a href="layouts-topbar-dark.html" class="dropdown-item">Dark Topbar</a>
+                                                        <a href="layouts-full-width.html" class="dropdown-item">Full width</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </nav>
                         </div>
                     </div>
                 </div>
 
     
             </header>
-
             <!-- ============================================================== -->
             <!-- Start right Content here -->
             <!-- ============================================================== -->
@@ -97,10 +293,10 @@
                         <div class="container-fluid">
                             <div class="row align-items-center">
                                 <div class="col-md-8">
-                                    <h4 class="page-title mb-1">Metode Pembayaran</h4>
+                                    <h4 class="page-title mb-1">Starter page</h4>
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Pages</a></li>
-                                    <li class="breadcrumb-item active">Metode Pembayaran</li>
+                                    <li class="breadcrumb-item active">Starter</li>
                                     </ol>
                                 </div>
                                 <div class="col-md-4">
@@ -131,116 +327,90 @@
                                 <div class="col-xl-12">
                                     <div class="card">
                                         <div class="card-body">
-                                            <div class="row justify-content-center">
+                                            <div class="row d-flex justify-content-center">
                                                 <div class="col-lg-10">
                                                     <div class="text-center mt-4">
-                                                        <h2>Pembayaran</h2>
-                                                        <!-- <p class="text-muted">If several languages coalesce, the grammar of the resulting language</p> -->
+                                                        <h2>Pilih Kurir</h2>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="row mt-5">
-                                                <div class="col-lg-5">
-                                                    <div>
-                                                        <h4>Pilih Metode Pembayaran</h4>
-                                                        <hr>
-                                                        <div class="accordion custom-accordion" id="accordionExample">
-                                                            <div class="card mb-2" style="cursor:pointer">
-                                                                <a data-toggle="collapse" @click="first" class="faq collapsed" aria-expanded="true" aria-controls="collapseOne">
-                                                                    <div class="card-header bank" id="headingOne">
-                                                                        <h6 class="mb-0 faq-question">
-                                                                             Virtual Account BCA
-                                                                        </h6>
-                                                                            <i v-if="centang === 1" class="fas float-right fa-check"></i>
-                                                                    </div>
-                                                                </a>
-                                                            </div>
-                                                            <!-- collapse one end -->
-
-                                                            <div class="card shadow-none mb-2">
-                                                                <a class="collapsed faq" @click="second" data-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                                                                    <div class="card-header bank" id="headingTwo">
-                                                                      <img src="https://s3-ap-southeast-1.amazonaws.com/loket-production-sg/images/payment_logo/20170125045852.png" alt="">
-                                                                        <h6 class="mb-0 faq-question">
-                                                                            Klik BCA
-                                                                        </h6>
-                                                                            <i v-if="centang === 2" class="fas float-right fa-check"></i>
-                                                                    </div>
-                                                                </a>
-                                                            </div>
-                                                            <!-- collapse two end -->
-
-                                                            <div class="card shadow-none mb-2">
-                                                                <a class="collapsed faq" @click="third" data-toggle="collapse" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                                                                    <div class="card-header bank" id="headingThree">
-                                                                        <h6 class="mb-0 faq-question">
-                                                                            Link Aja
-                                                                        </h6>
-                                                                            <i v-if="centang === 3" class="fas float-right fa-check"></i>
-                                                                    </div>
-                                                                </a>
-                                                            </div>
-                                                            <div class="card shadow-none mb-2">
-                                                                <a class="collapsed faq" @click="fourth" data-toggle="collapse" href="#collapseFour" aria-expanded="true" aria-controls="collapseThree">
-                                                                    <div class="card-header bank" id="headingThree">
-                                                                        <h6 class="mb-0 faq-question">
-                                                                            Mandiri
-                                                                        </h6>
-                                                                            <i v-if="centang === 4" class="fas float-right fa-check"></i>
-                                                                    </div>
-                                                                </a>
-                                                            </div>
-                                                            <!-- collapse two end -->
-                                                        </div>
+                                                <div class="col-lg-6">
+                                                  <div class="cards col-lg-6 d-flex">
+                                                    <div class="img">
+                                                      <img src="https://seeklogo.com/images/J/jne-express-new-2016-logo-375E58A33D-seeklogo.com.png">
                                                     </div>
-                                                </div>
-                                                <div class="col-lg-7">
-                                                    <div class="card">
-                                                        <div class="card-body p-0">
-                                                          <h4>Konfirmasi</h4>
-                                                          <hr>
-                                                            <div class="table-responsive">
-                                                                <table class="table mb-0">
-                                                                    <thead class="thead-light">
-                                                                        <tr>
-                                                                            <th>Ringkasan</th>
-                                                                            <th>Harga Per Ticket</th>
-                                                                            <th>Kuantitas</th>
-                                                                            <th>Jumlah</th>
-                                                                        </tr>
-                                                                    </thead>
-                                                                    <tbody>
-                                                                        <tr>
-                                                                            <th>Ticket Dieng</th>
-                                                                            <td>Rp.0</td>
-                                                                            <td>1</td>
-                                                                            <td>Rp. 100.000</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <th>Ongkos Kirim</th>
-                                                                            <td></td>
-                                                                            <td>1</td>
-                                                                            <td>Rp. 10.000</td>
-                                                                        </tr>
-                                                                        <tr class="text-bold" style="font-weight: bolder;;border-top: 1px solid black;">
-                                                                            <th>Total Keseluruhan</th>
-                                                                            <td></td>
-                                                                            <td>1</td>
-                                                                            <td>Rp. 110.000</td>
-                                                                        </tr>
-                                                                    </tbody>
-                                                                </table>
+                                                    <div class="namekur">
+                                                      <h4>JNE</h4>
+                                                      <p>REGULAR</p>
+                                                    </div>
+                                                    <hr>
+                                                  </div>
+                                                    <!-- <div class="accordion custom-accordion" id="accordionExample"> -->
+                                                        <!-- <div class="card shadow-none mb-2">
+                                                            <a data-toggle="collapse" href="#collapseOne" class="faq" aria-expanded="true" aria-controls="collapseOne">
+                                                                <div class="card-header kurir" id="headingOne">
+                                                                    <h6 class="mb-0 faq-question">
+                                                                        <div class="d-flex">
+                                                                            <img style="width: 50px;height:50px" src="https://seeklogo.com/images/J/jne-express-new-2016-logo-375E58A33D-seeklogo.com.png" alt="">
+                                                                            <div class="choosekurir">
+                                                                                <h4>
+                                                                                    JNE
+                                                                                </h4>
+                                                                                <p>
+                                                                                    Regular|OKE
+                                                                                </p>
+                                                                            </div>
+                                                                        </div>
+                                                                        <i class="mdi mdi-chevron-up float-right accor-plus-icon"></i>
+                                                                    </h6>
+                                                                </div>
+                                                            </a>
+                            
+                                                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                                                <div class="card-body">
+                                                                    <p class="text-muted mb-0 faq-ans">To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what languages are members of the same family.</p>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div>
-                                                        <button type="button" class="btn btn-light waves-effect waves-light mr-2">Cancle</button>
-                                                        <button type="button" class="btn btn-info waves-effect waves-light">Selanjutnya</button>
-                                                        <!-- <button type="button" class="btn btn-info waves-effect waves-light ">Selanjutnya</button> -->
-                                                    </div>
+
+                                                        <div class="card shadow-none mb-2">
+                                                            <a class="collapsed faq" data-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                                                <div class="card-header kurir" id="headingTwo">
+                                                                    <h6 class="mb-0 faq-question">
+                                                                        <i class="mdi mdi-help text-primary h5 mr-3"></i>Where does it come from?
+                                                                        <i class="mdi mdi-chevron-up float-right accor-plus-icon"></i>
+                                                                    </h6>
+                                                                </div>
+                                                            </a>
+
+                                                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                                                <div class="card-body">
+                                                                    <p class="text-muted mb-0 faq-ans">To achieve this, it would be necessary to have uniform grammar, pronunciation and more common words. If several languages coalesce of the resulting language.</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="card shadow-none mb-2">
+                                                            <a class="collapsed faq" data-toggle="collapse" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                                                <div class="card-header kurir" id="headingThree">
+                                                                    <h6 class="mb-0 faq-question">
+                                                                        <i class="mdi mdi-help text-primary h5 mr-3"></i>Why do we use it?
+                                                                        <i class="mdi mdi-chevron-up float-right accor-plus-icon"></i>
+                                                                    </h6>
+                                                                </div>
+                                                            </a>
+
+                                                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                                                <div class="card-body">
+                                                                    <p class="text-muted mb-0 faq-ans">If several languages coalesce, the grammar of the resulting language is more simple and regular than that of the individual languages new common will be more simple.</p>
+                                                                </div>
+                                                            </div>
+                                                        </div> -->
+                                                    <!-- </div> -->
                                                 </div>
+                                                <div class="col-lg-6"></div>
                                             </div>
-                                            <!-- end row -->
                                         </div>
                                     </div>
                                 </div>
@@ -560,7 +730,7 @@
 
                         <h6 class="px-4 py-3 mt-2 bg-light">Advanced Settings</h6>
 
-                          <div class="p-4">
+                        <div class="p-4">
                             <h6 class="font-weight-medium">Application Alerts</h6>
                             <div class="custom-control custom-switch mb-1">
                                 <input type="checkbox" class="custom-control-input" id="settings-check4" name="settings-check4" checked="">
@@ -571,67 +741,41 @@
                                 <input type="checkbox" class="custom-control-input" id="settings-check5" name="settings-check5">
                                 <label class="custom-control-label font-weight-normal" for="settings-check5">SMS Notifications</label>
                             </div>
+
                             <h6 class="mt-4">API</h6>
                             <div class="custom-control custom-switch mb-1">
                                 <input type="checkbox" class="custom-control-input" id="settings-check6" name="settings-check6">
                                 <label class="custom-control-label font-weight-normal" for="settings-check6">Enable access</label>
                             </div>
 
-                          </div>
+                        </div>
                     </div>
                 </div>
 
             </div> <!-- end slimscroll-menu-->
         </div>
         <!-- /Right-bar -->
+
         <!-- Right bar overlay-->
         <div class="rightbar-overlay"></div>
     </body>
 </template>
 
 <script>
-import { mapState } from 'vuex'
-
 export default {
-  data() {
-    return {
-      centang: null,
-    }
-  },
-  methods: {
-    first() {
-      this.centang = 1
-    },
-    second() {
-      this.centang = 2
-    },
-    third() {
-      this.centang = 3
-    },
-    fourth() {
-      this.centang = 4
-    }
-  },
-  computed: {
-    ...mapState(['profileUser'])
-  },
-  mounted() {
-    this.$store.dispatch('getUser')
-  }
+
 }
 </script>
 
 <style lang="scss" scoped>
-  @import '../assets/css/bootstrap.min.css';
-  @import '../assets/css/icons.min.css';
-  @import '../assets/css/app.min.css';
-  .bank{
-    display: flex;
-    align-items: center;
-    img{
-      margin-right: 10px;
-      width: 50px;
-        // height: 50px;
+  .cards{
+    border-radius: 10px;
+    border: 1px solid #666;
+    box-shadow:  0px 0px 10px 0px rgba(0,0,0,0.75);;
+    .img{
+      img{
+        width: 50px;
+      }
     }
   }
 </style>

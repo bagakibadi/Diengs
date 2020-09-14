@@ -9,7 +9,7 @@
             </router-link>
           </div>
           <div class="buton">
-            <router-link to="/login">
+            <router-link to="/masuk">
               <button class="btn btn-primary masuk">Masuk</button>
             </router-link>
           </div>
@@ -62,7 +62,7 @@ export default {
   methods: {
     gratis() {
       // this.tipe = 0
-      this.$router.push('/register')
+      this.$router.push('/ticket')
     },
     // pay() {
     //   this.tipe = 1

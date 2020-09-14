@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 const Login = () => import ('@/views/Login')
 const Register = () => import ('@/views/Daftar')
-const Ticket = () => import ('@/views/Ticket')
+// const Ticket = () => import ('@/views/Ticket')
 const Index = () => import ('@/views/Homes')
 const Admin = () => import ('@/views/Admin')
 const Test = () => import ('@/views/Test')
@@ -13,10 +13,17 @@ const Room = () => import ('@/views/Room')
 const Pembayaran = () => import ('@/views/Pembayaran')
 const Upload = () => import ('@/views/Upload')
 const Meeting = () => import ('@/components/Meeting')
+const Kurir = () => import ('@/views/Kurir')
+const NewRegist = () => import ('@/views/NewRegist')
 
 Vue.use(Router)
 
 const routes = [
+  {
+    path: '/kurir',
+    name: 'Kurir',
+    component: Kurir
+  },
   {
     path: '/meeting',
     name: 'Meeting',
@@ -63,19 +70,19 @@ const routes = [
     component: Admin
   },
   {
-    path: '/login',
+    path: '/masuk',
     name: 'Login',
     component: Login
   },
   {
-    path: '/register',
+    path: '/daftar',
     name: 'Daftar',
     component: Register,
   },
   {
     path: '/ticket',
     name: 'Ticket',
-    component: Ticket
+    component: NewRegist
   },
   {
     path: '/',

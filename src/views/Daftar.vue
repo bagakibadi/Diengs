@@ -58,7 +58,7 @@
                                                     <button class="btn btn-success btn-block waves-effect waves-light" type="submit">Register</button>
                                                 </div>
                                                 <div class="mt-4 text-center">
-                                                    <router-link to="/login" class="text-muted"><i class="mdi
+                                                    <router-link to="/masuk" class="text-muted"><i class="mdi
                                                              mdi-account-circle mr-1"></i> Sudah punya akun ?</router-link>
                                                 </div>
                                             </div>
@@ -103,11 +103,11 @@ export default {
       }
     }
   },
-  // created() {
-  //   if (!localStorage.tipe) {
-  //     this.$router.push('/ticket')
-  //   }
-  // },
+  created() {
+    if (!localStorage.tipe) {
+      this.$router.push('/ticket')
+    }
+  },
   methods: {
     daftars() {
       this.$store.dispatch('postApi', {
@@ -144,7 +144,7 @@ export default {
               timer: 1500
             })
             setTimeout(() => {
-              this.$router.push('/login')
+              this.$router.push('/masuk')
             }, 2000)
           }
         })

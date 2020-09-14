@@ -339,7 +339,7 @@ export default {
       // eslint-disable-next-line no-console
       console.log(this.profile)
       if(!localStorage.token) {
-          this.$router.push('/login')
+          this.$router.push('/masuk')
       } else {
           Axios.get(`${process.env.VUE_APP_API}profile`, {
                 headers: {
