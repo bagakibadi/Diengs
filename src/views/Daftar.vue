@@ -139,33 +139,54 @@ export default {
               text: 'Email Sudah Terdaftar',
             })
           }
-          if (res.data.email !== null) {
+          else if (res.data.email !== null) {
             // eslint-disable-next-line no-console
             console.log('bener')
-            if (localStorage.tipe === 0) {
+            if (localStorage.tipe == 0) {
               Swal.fire({
                 position: 'center',
                 icon: 'success',
-                title: 'Register Success',
+                title: 'Register Success Silahkan Hubungi Admin untuk Aktivasi',
                 showConfirmButton: false,
-                timer: 1500
               })
-              setTimeout(() => {
-                this.$router.push('/masuk')
-              }, 2000)
             }
-            if (localStorage.tipe !== 0) {
-              localStorage.token = res.data.accessToken
-              Swal.fire({
-                position: 'center',
-                icon: 'success',
-                title: 'Register Success',
-                showConfirmButton: false,
-                timer: 1500
+            else{
+              this.$store.dispatch('postApi', {
+                url: 'login',
+                data: {
+                  username: this.daftar.email,
+                  password: this.daftar.password
+                }
               })
-              setTimeout(() => {
-                this.$router.push('/profile')
-              }, 2000)
+                .then((res) => {
+                  // eslint-disable-next-line no-console
+                  console.log(res)
+                  if (res.data.status === 3) {
+                    delete localStorage.tipe
+                    // this.$router.push('/')
+                  } else {
+                    // eslint-disable-next-line no-console
+                    console.log(res)
+                    localStorage.token = res.data.accessToken
+                    Swal.fire({
+                      position: 'center',
+                      icon: 'success',
+                      title: 'Register Success',
+                      showConfirmButton: false,
+                      timer: 1500
+                    })
+                    setTimeout(() => {
+                      this.$router.push('/profile')
+                    }, 2000)
+                  }
+                })
+                .catch((err) => {
+                  // eslint-disable-next-line no-console
+                  console.log(err)
+                })
+              // setTimeout(() => {
+              //   this.$router.push('/profile')
+              // }, 2000)
             }
           }
         })

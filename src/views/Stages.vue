@@ -85,7 +85,7 @@
           <button class="desktop" @click="join">Join</button>
           <button class="mobile"><a href="https://so.mice.id/5">Join</a></button>
         </div>
-        <h1>VIRTUAL EVENT DIENG CULTURE VESTIVAL</h1>
+        <h1>VIRTUAL EVENT DIENG CULTURE FESTIVAL</h1>
         <!-- <iframe width="800" height="400" src="https://www.youtube.com/embed/4deVCNJq3qc?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
         <iframe src="https://www.youtube.com/embed/Oi2ygASXK6M?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
@@ -98,23 +98,33 @@
           </div>
           <div class="contentschedule">
           <div class="judulevent">
-              <h1>Registrasi Undangan & Peserta</h1>
-              <p>09.30 - 10.00</p>
+              <h1>Aksi Dieng Bersih</h1>
+              <p>09:00 - 12:00 16 September 2020</p>
             </div>
             <div class="judulevent">
-              <h1>Safety Briefing </h1>
-              <p>10.00 - 10.10</p>
+              <h1>Opening
+                Webinar (+sesi tanya jawab)
+                Pentas Seni Tradisional
+                Jazz Atas Awan</h1>
+              <p>13:00 - 16:00 16 September 2020</p>
             </div>
             <div class="judulevent">
-              <h1>Performance Art
-                (Pertunjukan Tari Traditional Bali)</h1>
-              <p>10.10 - 10.20</p>
+              <h1>Kenduri (doa bersama)</h1>
+              <p>18:00 - 19:00 16 September 2020</p>
             </div>
             <div class="judulevent">
-              <h1>Menyanyikan Lagu Indonesia Raya</h1>
-              <p>10.20 – 10.25</p>
+              <h1>Jazz Atas Awan</h1>
+              <p>19:30 - 22:30 16 September 2020</p>
             </div>
             <div class="judulevent">
+              <h1>Ritual Cukur Rambut Gembel</h1>
+              <p>09:00 - 12:00 17 September 2020</p>
+            </div>
+            <div class="judulevent">
+              <h1>Closing</h1>
+              <p>12:00 17 September 2020</p>
+            </div>
+            <!-- <div class="judulevent">
               <h1>OPENING</h1>
               <p>10.25 - 10.30</p>
             </div>
@@ -172,7 +182,7 @@
             <div class="judulevent">
               <h1>Penutup</h1>
               <p>15.45 – 16.00</p>
-            </div>
+            </div> -->
           </div>
         </div>
         <div class="day">

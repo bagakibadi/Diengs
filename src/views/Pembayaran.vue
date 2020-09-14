@@ -145,7 +145,7 @@
                                                         <h4>Pilih Metode Pembayaran</h4>
                                                         <hr>
                                                         <div class="accordion custom-accordion" id="accordionExample">
-                                                            <div class="card mb-2" style="cursor:pointer">
+                                                            <!-- <div class="card mb-2" style="cursor:pointer">
                                                                 <a data-toggle="collapse" @click="first" class="faq collapsed" aria-expanded="true" aria-controls="collapseOne">
                                                                     <div class="card-header bank" id="headingOne">
                                                                         <h6 class="mb-0 faq-question">
@@ -154,23 +154,23 @@
                                                                             <i v-if="centang === 1" class="fas float-right fa-check"></i>
                                                                     </div>
                                                                 </a>
-                                                            </div>
+                                                            </div> -->
                                                             <!-- collapse one end -->
 
                                                             <div class="card shadow-none mb-2">
                                                                 <a class="collapsed faq" @click="second" data-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                                                                    <div class="card-header bank" id="headingTwo">
-                                                                      <img src="https://s3-ap-southeast-1.amazonaws.com/loket-production-sg/images/payment_logo/20170125045852.png" alt="">
-                                                                        <h6 class="mb-0 faq-question">
-                                                                            Klik BCA
-                                                                        </h6>
-                                                                            <i v-if="centang === 2" class="fas float-right fa-check"></i>
+                                                                    <div class="card-header bank" id="headingTwo" style="position:relative">
+                                                                      <img src="https://statik.tempo.co/data/2018/02/06/id_682386/682386_720.jpg" alt="">
+                                                                      <h6 class="mb-0 faq-question">Mandiri Transfer</h6>
+                                                                      <div style="position:absolute;right:20px">
+                                                                        <i class="fas fa-check"></i>
+                                                                      </div>
                                                                     </div>
                                                                 </a>
                                                             </div>
                                                             <!-- collapse two end -->
 
-                                                            <div class="card shadow-none mb-2">
+                                                            <!-- <div class="card shadow-none mb-2">
                                                                 <a class="collapsed faq" @click="third" data-toggle="collapse" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
                                                                     <div class="card-header bank" id="headingThree">
                                                                         <h6 class="mb-0 faq-question">
@@ -189,7 +189,7 @@
                                                                             <i v-if="centang === 4" class="fas float-right fa-check"></i>
                                                                     </div>
                                                                 </a>
-                                                            </div>
+                                                            </div> -->
                                                             <!-- collapse two end -->
                                                         </div>
                                                     </div>
@@ -204,7 +204,7 @@
                                                                     <thead class="thead-light">
                                                                         <tr>
                                                                             <th>Ringkasan</th>
-                                                                            <th>Harga Per Ticket</th>
+                                                                            <th>Detail</th>
                                                                             <th>Kuantitas</th>
                                                                             <th>Jumlah</th>
                                                                         </tr>
@@ -212,21 +212,24 @@
                                                                     <tbody>
                                                                         <tr>
                                                                             <th>Ticket Dieng</th>
-                                                                            <td>Rp.0</td>
+                                                                            <td v-if="tipe == 1">Cutlery Set dan Magnet Kulkas</td>
+                                                                            <td v-if="tipe == 2">Cutlery Set, Magnet Kulkas dan Tshirt</td>
                                                                             <td>1</td>
-                                                                            <td>Rp. 100.000</td>
+                                                                            <td v-if="tipe == 1">Rp.40000</td>
+                                                                            <td v-if="tipe == 2">Rp.150000</td>
                                                                         </tr>
                                                                         <tr>
                                                                             <th>Ongkos Kirim</th>
-                                                                            <td></td>
+                                                                            <td>JNE</td>
                                                                             <td>1</td>
-                                                                            <td>Rp. 10.000</td>
+                                                                            <td>Rp. {{pilih}}</td>
                                                                         </tr>
                                                                         <tr class="text-bold" style="font-weight: bolder;;border-top: 1px solid black;">
                                                                             <th>Total Keseluruhan</th>
                                                                             <td></td>
-                                                                            <td>1</td>
-                                                                            <td>Rp. 110.000</td>
+                                                                            <td>2</td>
+                                                                            <td v-if="tipe == 1">Rp. {{hitung1}}</td>
+                                                                            <td v-if="tipe == 2">Rp. {{hitung2}}</td>
                                                                         </tr>
                                                                     </tbody>
                                                                 </table>
@@ -235,7 +238,7 @@
                                                     </div>
                                                     <div>
                                                         <button type="button" class="btn btn-light waves-effect waves-light mr-2">Batal</button>
-                                                        <button type="button" class="btn btn-info waves-effect waves-light">Selanjutnya</button>
+                                                        <button type="button" @click="next" class="btn btn-info waves-effect waves-light">Selanjutnya</button>
                                                         <!-- <button type="button" class="btn btn-info waves-effect waves-light ">Selanjutnya</button> -->
                                                     </div>
                                                 </div>
@@ -596,9 +599,22 @@ export default {
   data() {
     return {
       centang: null,
+      tipe: localStorage.tipe,
+      pilih: localStorage.pilih,
+      hitung1: parseInt(localStorage.pilih) + 40000,
+      hitung2: parseInt(localStorage.pilih) + 150000,
     }
   },
   methods: {
+    next() {
+      if (localStorage.tipe == 1) {
+        localStorage.total = this.hitung1
+        this.$router.push('/bayar')
+      } else {
+        localStorage.total = this.hitung2
+        this.$router.push('/bayar')
+      }
+    },
     first() {
       this.centang = 1
     },

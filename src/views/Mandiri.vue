@@ -86,47 +86,32 @@
                                 <div class="col-lg-12">
                                     <div class="card">
                                         <div class="card-body">
-                                            <h5 class="header-title mt-4">Edit Profile</h5>
-                                            <p>
-                                            Untuk mengubah profile anda harap edit informasi dibawah ini
-                                            </p>
-                                            <form @submit.prevent="updateprofile">
-                                                <div class="form-group col-sm-6">
-                                                    <label for="alamat">Alamat</label>
-                                                    <input type="text" class="form-control" id="alamat" placeholder="Silahkan Masukan Alamat" v-model="profile.alamat">
+                                            <div class="row justify-content-center">
+                                                <div class="col-lg-10">
+                                                    <div class="text-center mt-4">
+                                                        <h2>Pembayaran</h2>
+                                                        <!-- <p class="text-muted">If several languages coalesce, the grammar of the resulting language</p> -->
+                                                    </div>
                                                 </div>
-                                                <!-- <div class="form-group col-sm-6">
-                                                    <label for="hp">No.Hp</label>
-                                                    <input type="number" class="form-control" id="hp" placeholder="Silahkan Masukan No.Hp" v-model="profile.hp">
-                                                </div> -->
-                                                <div class="form-group col-sm-6">
-                                                    <label for="provinsi">Provinsi</label>
-                                                    <select class="form-control" id="provinsi" v-model="provinsi">
-                                                        <option selected>Silahkan Pilih Provinsi</option>
-                                                        <option v-for="(provs, index) in ongkir" 
-                                                        :key="index"
-                                                        :value="provs.province_id">{{ provs.province }}
-                                                        </option>
-                                                    </select>
+                                            </div>
+                                            <div class="row mt-5 d-flex align-items-center" style="flex-direction: column;">
+                                                <h5>Silahkan Transfer Sebesar</h5>
+                                                <h5>Rp.{{total}}</h5>
+                                                <h5>Ke Rekening Mandiri :</h5>
+                                                <div class="card d-flex align-items-center" style="flex-direction: column; padding: 20px 20px 10px 20px; border: 1px solid #999;">
+                                                    <img src="https://statik.tempo.co/data/2018/02/06/id_682386/682386_720.jpg" style="width:150px">
+                                                    <p class="mb-0 mt-2">164-000-1873044</p>
+                                                    <span>a/n</span>
+                                                    <p>PT. Prima Mandiri Komunikasi</p>
                                                 </div>
-                                                <div class="form-group col-sm-6">
-                                                    <label for="kota">Kabupaten</label>
-                                                    <select class="form-control" id="kota" v-model="kabupaten">
-                                                        <option selected>-Silahkan Pilih Kabupaten-</option>
-                                                        <option v-for="(kota, index) in kota" 
-                                                        :key="index"
-                                                        :value="kota.city_id">{{ kota.city_name }}
-                                                        </option>
-                                                    </select>
-                                                </div>
-                                                <div class="form-group col-sm-6">
-                                                    <label for="kodepos">Kode Pos</label>
-                                                    <input type="text" class="form-control" id="kodepos" placeholder="Silahkan Masukan Kode Pos" v-model="profile.pos">
-                                                </div>
-                                                <div>
-                                                    <button type="submit" class="btn btn-primary" style="width:200px;height:45px;border-radius:25px">Submit</button>
-                                                </div>
-                                            </form>
+                                                <form @submit.prevent="uploadFile" class="text-center">
+                                                    <h5 for="upload">Silahkan Upload Bukti pembayaran anda disini :</h5>
+                                                    <input @change="click" type="file" id="upload" required>
+                                                    <div>
+                                                        <button type="submit" class="btn btn-primary mt-3" style="width: 200px;height:50px;border-radius:25px">Submit</button>
+                                                    </div>
+                                                </form>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -163,98 +148,52 @@
 
 <script>
 import Axios from 'axios'
-import Swal from 'sweetalert2'
+// import Swal from 'sweetalert2'
 import { mapState } from 'vuex'
+import Swal from 'sweetalert2'
 
 export default {
   data() {
     return {
-      user: {
-        first: '',
-        last: '',
-      },
-      profile: {},
-      change: {
-        password: '',
-      },
-      prov: [],
-      provinsi: null,
-      kabupaten: null,
-    //   kota: []
+      total: localStorage.total,
+      file: null
     }
   },
   methods: {
-    getProfile() {
-      Axios.get(`${process.env.VUE_APP_API}profile`, {
-          headers: {
-            'Authorization': `${localStorage.getItem('token')}`
-          }
-      })
-        .then((res) => {
-            // eslint-disable-next-line no-console
-            console.log(res)
-            this.profile = res.data
+    click(event) {
+      this.file = event.target.files[0]
+    },
+    uploadFile() {
+      const fd = new FormData()
+      fd.append('pembayaran', this.file)
+      fd.append('keterangan', 'test')
+      fd.append('nominal', localStorage.total)
+        Axios.post(`${process.env.VUE_APP_API}pembayaran`,fd
+        ,{
+            headers: {
+                'Authorization' : `${localStorage.token}`
+            }
         })
-        .catch((err) => {
+            .then((res) => {
+                // eslint-disable-next-line no-console
+                console.log(res)
+                if (res.data.status === true) {
+                // eslint-disable-next-line no-console
+                console.log('bener')
+                Swal.fire(
+                    'Upload Foto Berhasil',
+                    'Silahkan Hubungi Admin untuk meminta verifikasi',
+                    'success'
+                )
+                } else{
+                // eslint-disable-next-line no-console
+                console.log('salah')
+                }
+            })
+            .catch((err) => {
             // eslint-disable-next-line no-console
             console.log(err)
-        })
-    },
-    // getKota() {
-    //   this.$store.dispatch('getApi', {
-    //     url: `rajaongkir/kota/${this.provinsi}`,
-    //     mutation: "GET_KOTA"
-    //   })
-    // },
-    updateprofile() {
-      Axios.post(`${process.env.VUE_APP_API}profile`, {
-        alamat: this.profile.alamat,
-        no_hp: this.profile.hp,
-        provinsi: this.provinsi,
-        kabupaten: this.kabupaten,
-        kode_pos: this.profile.pos
-      }, {
-        headers: {
-          'Authorization': `${localStorage.getItem('token')}`
-        }
-      })
-        .then((res) => {
-          // eslint-disable-next-line no-console
-          console.log(res)
-          if (res.data.msg === "Berhasil") {
-            // eslint-disable-next-line no-console
-            console.log(res)
-            Axios.get(`${process.env.VUE_APP_API}rajaongkir/ongkos/37/${this.kabupaten}/1/jne`)
-                .then((res) => {
-                    // eslint-disable-next-line no-console
-                    console.log(res.data.rajaongkir.results[0].costs[1])
-                    localStorage.jneReg = res.data.rajaongkir.results[0].costs[0].cost[0].value
-                    localStorage.etdReg = res.data.rajaongkir.results[0].costs[0].cost[0].etd
-                    localStorage.jneOke = res.data.rajaongkir.results[0].costs[1].cost[0].value
-                    localStorage.etdOke = res.data.rajaongkir.results[0].costs[1].cost[0].etd
-                    Swal.fire({
-                        position: 'center',
-                        icon: 'success',
-                        title: 'Update Profile Success',
-                        showConfirmButton: false,
-                        timer: 1500
-                    })
-                    setTimeout(() => {
-                        this.$router.push('/kurir')
-                    }, 2000)
-                })
-                .catch((err) => {
-                    // eslint-disable-next-line no-console
-                    console.log(err)
-                })
-
-            // }
-          }
-        })
-        .catch((err) => {
-          // eslint-disable-next-line no-console
-          console.log(err)
-        })
+            })
     }
   },
   created() {

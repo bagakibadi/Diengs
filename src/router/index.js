@@ -22,15 +22,15 @@ const Upload = () => import ('@/views/Upload')
 const Meeting = () => import ('@/components/Meeting')
 const Kurir = () => import ('@/views/Kurir')
 const NewRegist = () => import ('@/views/NewRegist')
-const Pilihkurir = () => import ('@/views/Kurirs')
+const Bayar = () => import ('@/views/Mandiri')
 
 Vue.use(Router)
 
 const routes = [
   {
-    path: '/pilihkurir',
-    name: 'Kurirs',
-    component: Pilihkurir
+    path: '/bayar',
+    name: 'Bayar',
+    component: Bayar
   },
   {
     path: '/kurir',

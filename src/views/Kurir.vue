@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 <template>
   <body data-topbar="colored" data-layout="horizontal" data-layout-size="boxed">
 
@@ -336,80 +337,63 @@
                                             </div>
                                             <div class="row mt-5">
                                                 <div class="col-lg-6">
-                                                  <div class="cards col-lg-6 d-flex">
+                                                  <h3>Pengiriman JNE</h3>
+                                                  <div @click="jne1" class="cards col-lg-10 d-flex">
                                                     <div class="img">
                                                       <img src="https://seeklogo.com/images/J/jne-express-new-2016-logo-375E58A33D-seeklogo.com.png">
                                                     </div>
                                                     <div class="namekur">
                                                       <h4>JNE</h4>
-                                                      <p>REGULAR</p>
+                                                      <p>REG</p>
                                                     </div>
                                                     <hr>
+                                                    <div class="harga text-center">
+                                                      <p>Rp. {{jneReg}}</p>
+                                                      <p>{{etdReg}} Hari</p>
+                                                    </div>
                                                   </div>
-                                                    <!-- <div class="accordion custom-accordion" id="accordionExample"> -->
-                                                        <!-- <div class="card shadow-none mb-2">
-                                                            <a data-toggle="collapse" href="#collapseOne" class="faq" aria-expanded="true" aria-controls="collapseOne">
-                                                                <div class="card-header kurir" id="headingOne">
-                                                                    <h6 class="mb-0 faq-question">
-                                                                        <div class="d-flex">
-                                                                            <img style="width: 50px;height:50px" src="https://seeklogo.com/images/J/jne-express-new-2016-logo-375E58A33D-seeklogo.com.png" alt="">
-                                                                            <div class="choosekurir">
-                                                                                <h4>
-                                                                                    JNE
-                                                                                </h4>
-                                                                                <p>
-                                                                                    Regular|OKE
-                                                                                </p>
-                                                                            </div>
-                                                                        </div>
-                                                                        <i class="mdi mdi-chevron-up float-right accor-plus-icon"></i>
-                                                                    </h6>
-                                                                </div>
-                                                            </a>
-                            
-                                                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                                                                <div class="card-body">
-                                                                    <p class="text-muted mb-0 faq-ans">To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what languages are members of the same family.</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="card shadow-none mb-2">
-                                                            <a class="collapsed faq" data-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                                                                <div class="card-header kurir" id="headingTwo">
-                                                                    <h6 class="mb-0 faq-question">
-                                                                        <i class="mdi mdi-help text-primary h5 mr-3"></i>Where does it come from?
-                                                                        <i class="mdi mdi-chevron-up float-right accor-plus-icon"></i>
-                                                                    </h6>
-                                                                </div>
-                                                            </a>
-
-                                                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                                                                <div class="card-body">
-                                                                    <p class="text-muted mb-0 faq-ans">To achieve this, it would be necessary to have uniform grammar, pronunciation and more common words. If several languages coalesce of the resulting language.</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="card shadow-none mb-2">
-                                                            <a class="collapsed faq" data-toggle="collapse" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                                                                <div class="card-header kurir" id="headingThree">
-                                                                    <h6 class="mb-0 faq-question">
-                                                                        <i class="mdi mdi-help text-primary h5 mr-3"></i>Why do we use it?
-                                                                        <i class="mdi mdi-chevron-up float-right accor-plus-icon"></i>
-                                                                    </h6>
-                                                                </div>
-                                                            </a>
-
-                                                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                                                                <div class="card-body">
-                                                                    <p class="text-muted mb-0 faq-ans">If several languages coalesce, the grammar of the resulting language is more simple and regular than that of the individual languages new common will be more simple.</p>
-                                                                </div>
-                                                            </div>
-                                                        </div> -->
-                                                    <!-- </div> -->
+                                                  <div @click="jne2" class="cards col-lg-10 d-flex">
+                                                    <div class="img">
+                                                      <img src="https://seeklogo.com/images/J/jne-express-new-2016-logo-375E58A33D-seeklogo.com.png">
+                                                    </div>
+                                                    <div class="namekur">
+                                                      <h4>JNE</h4>
+                                                      <p>OKE</p>
+                                                    </div>
+                                                    <hr>
+                                                    <div class="harga text-center">
+                                                      <p>Rp. {{jneOke}}</p>
+                                                      <p>{{etdOke}} Hari</p>
+                                                    </div>
+                                                  </div>
                                                 </div>
-                                                <div class="col-lg-6"></div>
+                                                <div class="col-lg-6">
+                                                  <h3>Pengiriman POS</h3>
+                                                  <div @click="pos1" class="cards col-lg-10 d-flex">
+                                                    <div class="img">
+                                                      <img src="https://www.posindonesia.co.id/photos/1/Logo%20Pos%20Indonesia%20Kecil%20Warna%20Transparan.gif">
+                                                    </div>
+                                                    <div class="namekur">
+                                                      <h4>POS</h4>
+                                                      <p>PAKET KILAT KHUSUS</p>
+                                                    </div>
+                                                    <hr>
+                                                    <div class="harga text-center">
+                                                      <p>Rp. 20.000</p>
+                                                      <p>7-8 Hari</p>
+                                                    </div>
+                                                  </div>
+                                                  <!-- <div class="cards col-lg-12 d-flex">
+                                                    <div class="img">
+                                                      <img src="https://www.posindonesia.co.id/photos/1/Logo%20Pos%20Indonesia%20Kecil%20Warna%20Transparan.gif">
+                                                    </div>
+                                                    <div class="namekur">
+                                                      <h4>JNE</h4>
+                                                      <p>OKE</p>
+                                                    </div>
+                                                    <hr>
+                                                  </div> -->
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -762,19 +746,80 @@
 </template>
 
 <script>
-export default {
+// import Axios from 'axios'
 
+export default {
+  data() {
+    return {
+    //   jne1: null,
+    //   jne2: null,
+    //   pos1: null
+    jneReg: localStorage.jneReg,
+    jneOke: localStorage.jneOke,
+    etdOke: localStorage.etdOke,
+    etdReg: localStorage.etdReg
+    }
+  },
+  methods: {
+    jne1() {
+      localStorage.pilih = this.jneReg
+      this.$router.push('/pembayaran')
+    },
+    jne2() {
+      localStorage.pilih = this.jneOke
+      this.$router.push('/pembayaran')
+    },
+    pos1() {
+
+    }
+  },
+  created() {
+    // Axios.get(`${process.env.VUE_APP_API}rajaongkir/ongkos/37/${localStorage.kabupaten}/1/jne`)
+    //   .then((res) => {
+    //       // eslint-disable-next-line no-console
+    //       console.log(res.data.rajaongkir.results[0].costs[1])
+    //     this.jneOke.harga = res.data.rajaongkir.results[0].costs[0].cost[0].value
+    //     this.jneOke.etd = res.data.rajaongkir.results[0].costs[0].cost[0].etd
+    //     this.jneReg.harga = res.data.rajaongkir.results[0].costs[1].cost[0].value
+    //     this.jneReg.etd = res.data.rajaongkir.results[0].costs[1].cost[0].etd
+    //   })
+    //   .catch((err) => {
+    //       // eslint-disable-next-line no-console
+    //       console.log(err)
+    //   })
+  }
 }
 </script>
 
 <style lang="scss" scoped>
   .cards{
+    position: relative;
     border-radius: 10px;
-    border: 1px solid #666;
-    box-shadow:  0px 0px 10px 0px rgba(0,0,0,0.75);;
+    // border: .5px solid #666;
+    cursor: pointer;
+    padding: 15px 10px;
+    margin: 20px;
+    align-items: center;
+    box-shadow:  0px 0px 15px 0px rgba(0,0,0,0.15);;
     .img{
+      margin-right: 25px;
       img{
         width: 50px;
+      }
+    }
+    .namekur{
+      h4{
+        margin: 0;
+      }
+      p{
+        margin:0;
+      }
+    }
+    .harga{
+      position: absolute;
+      right: 20px;
+      p{
+        margin: 0;
       }
     }
   }
