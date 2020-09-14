@@ -113,11 +113,18 @@
                                                     <label for="kota">Kabupaten</label>
                                                     <select class="form-control" id="kota" v-model="kabupaten">
                                                         <option selected>-Silahkan Pilih Kabupaten-</option>
-                                                        <!-- <option v-for="(provs, index) in ongkir" 
+                                                        <option v-for="(kota, index) in kota" 
                                                         :key="index"
-                                                        :value="provs.province_id">{{ provs.province }}
-                                                        </option> -->
+                                                        :value="kota.city_id">{{ kota.city_name }}
+                                                        </option>
                                                     </select>
+                                                </div>
+                                                <div class="form-group col-sm-6">
+                                                    <label for="kodepos">Kode Pos</label>
+                                                    <input type="text" class="form-control" id="kodepos" placeholder="Silahkan Masukan Kode Pos">
+                                                </div>
+                                                <div>
+                                                    <button type="submit" class="btn btn-primary" style="width:200px;height:35px;border-radius:25px">Submit</button>
                                                 </div>
                                             </form>
                                             <!-- <h5 class="header-title mt-4">Edit Kredensial User</h5>
@@ -180,11 +187,11 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-sm-6">
-                                2020 © Xoric.
+                                2020 © Primakom.
                             </div>
                             <div class="col-sm-6">
                                 <div class="text-sm-right d-none d-sm-block">
-                                    Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesdesign
+                                    Crafted with by Primakom
                                 </div>
                             </div>
                         </div>
@@ -216,7 +223,8 @@ export default {
       },
       prov: [],
       provinsi: null,
-      kabupaten: null
+      kabupaten: null,
+    //   kota: []
     }
   },
   methods: {
@@ -236,18 +244,12 @@ export default {
             console.log(err)
         })
     },
-    getProv() {
-      Axios.get('https://api-dieng.primakom.co.id/rajaongkir/provinsi')
-        .then((res) => {
-            // eslint-disable-next-line no-console
-            console.log(res.data.rajaongkir.results)
-            this.prov = res.data.rajaongkir.results
-        })
-        .catch((err) => {
-            // eslint-disable-next-line no-console
-            console.log(err)
-        })
-    },
+    // getKota() {
+    //   this.$store.dispatch('getApi', {
+    //     url: `rajaongkir/kota/${this.provinsi}`,
+    //     mutation: "GET_KOTA"
+    //   })
+    // },
     updateprofile() {
       Axios.post(`${process.env.VUE_APP_API}profile`, {
         alamat: this.profile.alamat,
@@ -312,12 +314,21 @@ export default {
   },
   computed: {
     ...mapState(['profileUser']),
-    ...mapState(['ongkir'])
+    ...mapState(['ongkir']),
+    ...mapState(['kota']),
   },
   mounted() {
     this.$store.dispatch('getAcc')
     this.$store.dispatch('getOngkir')
+    // this.getKota()
+  },
+  updated() {
+    this.$store.dispatch('getApi', {
+        url: `rajaongkir/kota/${this.provinsi}`,
+        mutation: "GET_KOTA"
+    })
   }
+
 }
 </script>
 

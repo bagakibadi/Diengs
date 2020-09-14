@@ -23,11 +23,11 @@
           <p>Dieng Culture Festival merupakan acara tahunan khas Dataran Tinggi Dieng yang menampilkan berbagai kesenian dan budaya dengan inti acara pemotongan rambut gimbal anak-anak Dieng</p>
         </div>
         <div class="gratis">
-          <button @click="gratis" class="btn btn-primary">GRATIS</button>
+          <button @click="gratis" class="btn btn-primary">IKUTI EVENT</button>
         </div>
-        <div class="souvenir">
+        <!-- <div class="souvenir">
           <button @click="pay" class="btn btn-primary">SOUVENIR</button>
-        </div>
+        </div> -->
       </div>
     </div>
     <div class="content2">
@@ -45,6 +45,9 @@ Festival Dieng 2020.</p>
         <img src="../assets/images/logoprima.png" alt="">
         <img src="../assets/images/dieng.png" alt="">
       </div>
+      <div class="footers">
+        <p>©primakom</p>
+      </div>
     </div>
   </div>
 </template>
@@ -58,12 +61,12 @@ export default {
   },
   methods: {
     gratis() {
-      this.tipe = 0
+      // this.tipe = 0
       this.$router.push('/register')
     },
-    pay() {
-      this.tipe = 1
-    }
+    // pay() {
+    //   this.tipe = 1
+    // }
   }
 }
 </script>
@@ -108,8 +111,9 @@ export default {
         height: calc(100vh + 30px);
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        // justify-content: center;
         padding-left: 250px;
+        padding-top: 70px;
         .btn{
           width: 200px;
           height: 50px;
@@ -121,7 +125,7 @@ export default {
     .content2{
       width: 100%;
       background: url('../assets/images/bot.png');
-      height: calc(100vh - 100px);
+      height: auto;
       background-repeat: no-repeat;
       background-size: contain;
       background-position-y: bottom;
@@ -130,14 +134,25 @@ export default {
         // height: 100%;
         display: flex;
         flex-direction: column;
-        padding: 100px 150px 0 150px;
+        padding: 0 150px 0 150px;
       }
       .logos{
         width: 100%;
-        padding: 35px 130px 0 130px;
+        padding: 80px 80px 0 80px;
         display: flex;
         justify-content: space-between;
       }
+      .footers{
+        padding-top: 50px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    .logos{
+      display: none !important;
     }
   }
 </style>

@@ -11,7 +11,8 @@ export default new vuex.Store({
     allUser: [],
     profileUser: {},
     url: null,
-    ongkir: []
+    ongkir: [],
+    kota: []
   },
   mutations: {
     GET_USER(state, data) {
@@ -25,6 +26,9 @@ export default new vuex.Store({
     },
     GET_ONGKIR(state, data) {
       state.ongkir = data
+    },
+    GET_KOTA(state, data) {
+      state.kota = data.rajaongkir.results
     }
   },
   actions: {

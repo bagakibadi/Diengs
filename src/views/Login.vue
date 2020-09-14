@@ -54,7 +54,7 @@
                                                 <div class="mt-4">
                                                     <button class="btn btn-success btn-block waves-effect waves-light" type="submit">Log In</button>
                                                 </div>
-                                                <div class="mt-4 text-center">
+                                                <div class="mt-4 text-center" v-if="tipe !== null">
                                                     <router-link to="/register" class="text-muted"><i class="mdi
                                                             mdi-account-circle mr-1"></i> Buat akun</router-link>
                                                 </div>                                                
@@ -95,6 +95,7 @@ export default {
       login: {
         email: '',
         password: '',
+        tipe: localStorage.tipe
       }
     }
   },
