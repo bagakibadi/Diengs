@@ -17,10 +17,10 @@
       </div>
       <div class="content">
         <div class="judul">
-          <h1>Lorem Ipsum dolor sit amet</h1>
+          <h1>Dieng Culture Festival 2020</h1>
         </div>
         <div class="isi">
-          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
+          <p>Dieng Culture Festival merupakan acara tahunan khas Dataran Tinggi Dieng yang menampilkan berbagai kesenian dan budaya dengan inti acara pemotongan rambut gimbal anak-anak Dieng</p>
         </div>
         <div class="gratis">
           <button @click="gratis" class="btn btn-primary">GRATIS</button>
@@ -33,16 +33,13 @@
     <div class="content2">
       <div class="tengah">
         <div class="judul">
-          <h1>Lorem ipsum dolor</h1>
+          <h1>Hiburan</h1>
         </div>
         <div class="isi">
-          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed dia
-            m nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-             At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-              no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
-              consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-               dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
-              dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+        <p>Ada banyak hiburan yang bisa ditemukan dalam acara Dieng Culture Festival 2020, misalnya pagelaran kesenian
+        tradisional.</p> 
+<p>Lalu ada Aksi Dieng Bersih, Jazz Atas Awan, hingga Ritual Adat Pencukuran Rambut Gembel yang merupakan puncak acara dari
+Festival Dieng 2020.</p>
         </div>
       </div>
       <div class="logos">
