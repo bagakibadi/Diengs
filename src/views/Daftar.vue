@@ -143,12 +143,16 @@ export default {
             // eslint-disable-next-line no-console
             console.log('bener')
             if (localStorage.tipe == 0) {
-              Swal.fire({
-                position: 'center',
-                icon: 'success',
-                title: 'Register Success Silahkan Hubungi Admin untuk Aktivasi',
-                showConfirmButton: false,
-              })
+               Swal.fire({
+                      position: 'center',
+                      icon: 'success',
+                      title: 'Register Success',
+                      showConfirmButton: false,
+                      timer: 1500
+                    })
+                    setTimeout(() => {
+                      this.$router.push('/masuk')
+                    }, 2000)
             }
             else{
               this.$store.dispatch('postApi', {

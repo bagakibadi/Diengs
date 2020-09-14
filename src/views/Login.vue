@@ -106,11 +106,18 @@ export default {
           if (res.data.valid === null) {
             // eslint-disable-next-line no-console
             console.log('blom valid')
+            localStorage.token = res.data.accessToken
+          
             Swal.fire({
-              icon: 'error',
-              title: 'Oops...',
-              text: 'Akun Anda Belum Diverifikasi'
+              position: 'center',
+              icon: 'success',
+              title: 'Login Success',
+              showConfirmButton: false,
+              timer: 1500
             })
+            setTimeout(() => {
+              this.$router.push('/stages')
+            }, 2000)
           }
           else if (res.data.status === 3) {
             // eslint-disable-next-line no-console
