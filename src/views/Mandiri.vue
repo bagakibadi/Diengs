@@ -104,14 +104,19 @@
                                                     <span>a/n</span>
                                                     <p>PT. Prima Mandiri Komunikasi</p>
                                                 </div>
-
-                                                <!-- <form @submit.prevent="uploadFile" class="text-center">
+                                                <div class="d-flex justify-content-center mb-2" style="flex-direction: column; align-items: center">
+                                                    <h5>Jika ada Kendala Dalam Pembayaran Silahkan Hubungi Custemer Service di WA</h5>
+                                                    <a href="http://wa.me/08113475177" target="_blank">
+                                                        <img src="https://w7.pngwing.com/pngs/110/230/png-transparent-whatsapp-application-software-message-icon-whatsapp-logo-whats-app-logo-logo-grass-mobile-phones.png" style="width:100px">
+                                                    </a>
+                                                </div>
+                                                <form @submit.prevent="uploadFile" class="text-center">
                                                     <h5 for="upload">Silahkan Upload Bukti pembayaran anda disini :</h5>
                                                     <input @change="click" type="file" id="upload" required>
                                                     <div>
                                                         <button type="submit" class="btn btn-primary mt-3" style="width: 200px;height:50px;border-radius:25px">Submit</button>
                                                     </div>
-                                                </form> -->
+                                                </form>
                                             </div>
                                         </div>
                                     </div>

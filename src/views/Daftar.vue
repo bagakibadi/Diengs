@@ -31,7 +31,7 @@
                                                     <label for="username">Username</label>
                                                 </div> -->
                                                 <div class="form-row form-group-custom mb-4">
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-6 mobilefirst">
                                                         <input class="form-control" type="text" id="first_name" required v-model="daftar.first"> 
                                                         <label for="first_name">First Name</label>
                                                     </div>
@@ -205,5 +205,9 @@ export default {
 </script>
 
 <style>
-
+  @media only screen and (max-width: 600px) {
+    .mobilefirst{
+      margin-bottom: 20px !important;
+    }
+  }
 </style>
