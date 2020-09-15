@@ -267,7 +267,7 @@
                             <a href="javascript: void(0);" class="text-reset notification-item">
                                 <div class="media">
                                     <div class="position-relative align-self-center mr-3">
-                                        <img src="../assets/images/users/avatar-10.jpg" class="rounded-circle avatar-xs" alt="user-pic">
+                                        <img src="https://www.iconfinder.com/data/icons/linecon/512/photo-512.png" class="rounded-circle avatar-xs" alt="user-pic">
                                         <i class="mdi mdi-circle user-status online"></i>
                                     </div>
                                     <div class="media-body overflow-hidden">

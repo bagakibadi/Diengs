@@ -10,7 +10,7 @@
                         <div class="float-right">
                             <div class="dropdown d-inline-block">
                                 <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <img class="rounded-circle header-profile-user" src="../assets/images/users/avatar-1.jpg" alt="Header Avatar">
+                                    <img class="rounded-circle header-profile-user" src="https://www.iconfinder.com/data/icons/linecon/512/photo-512.png" alt="Header Avatar">
                                     <span class="d-none d-sm-inline-block ml-1">{{profileUser.first_name}}</span>
                                     <i class="mdi mdi-chevron-down d-none d-sm-inline-block"></i>
                                 </button>
@@ -101,7 +101,7 @@
                                                 </div> -->
                                                 <div class="form-group col-sm-6">
                                                     <label for="provinsi">Provinsi</label>
-                                                    <select class="form-control" id="provinsi" v-model="provinsi" @change="getKota">
+                                                    <select class="form-control" id="provinsi" v-model="profile.provinsi" @change="getKota">
                                                         <option selected>Silahkan Pilih Provinsi</option>
                                                         <option v-for="(provs, index) in ongkir" 
                                                         :key="index"
@@ -111,7 +111,7 @@
                                                 </div>
                                                 <div class="form-group col-sm-6">
                                                     <label for="kota">Kabupaten</label>
-                                                    <select :placeholder="isLoading ? 'Loading...' : 'Silahkan Pilih Kabupaten'" class="form-control" id="kota" v-model="kabupaten">
+                                                    <select :placeholder="isLoading ? 'Loading...' : 'Silahkan Pilih Kabupaten'" class="form-control" id="kota" v-model="profile.kabupaten">
                                                         <option selected >-Silahkan Pilih Kabupaten-</option>
                                                         <option v-for="(kota, index) in kota" 
                                                         :key="index"
@@ -121,7 +121,7 @@
                                                 </div>
                                                 <div class="form-group col-sm-6">
                                                     <label for="kodepos">Kode Pos</label>
-                                                    <input type="text" class="form-control" id="kodepos" placeholder="Silahkan Masukan Kode Pos" v-model="profile.pos">
+                                                    <input type="text" class="form-control" id="kodepos" placeholder="Silahkan Masukan Kode Pos" v-model="profile.kode_pos">
                                                 </div>
                                                 <div>
                                                     <button type="submit" class="btn btn-primary" style="width:200px;height:45px;border-radius:25px">Submit</button>
@@ -193,7 +193,7 @@ export default {
     getKota() {
       this.$store.dispatch('startFetch')
       this.$store.dispatch('getApi', {
-        url: `rajaongkir/kota/${this.provinsi}`,
+        url: `rajaongkir/kota/${this.profile.provinsi}`,
         mutation: "GET_KOTA"
       })
         .then((res) => {
@@ -209,9 +209,9 @@ export default {
     updateprofile() {
       Axios.post(`${process.env.VUE_APP_API}profile`, {
         alamat: this.profile.alamat,
-        prov_id: this.provinsi,
-        kab_id: this.kabupaten,
-        kode_pos: this.profile.pos
+        provinsi: this.profile.provinsi,
+        kabupaten: this.profile.kabupaten,
+        kode_pos: this.profile.kode_pos
       }, {
         headers: {
           'Authorization': `${localStorage.getItem('token')}`
@@ -223,10 +223,10 @@ export default {
           if (res.data.msg === "Berhasil") {
             // eslint-disable-next-line no-console
             console.log(res)
-            Axios.get(`${process.env.VUE_APP_API}rajaongkir/ongkos/37/${this.kabupaten}/1/jne`)
+            Axios.get(`${process.env.VUE_APP_API}rajaongkir/ongkos/37/${this.profile.kabupaten}/1/jne`)
                 .then((res) => {
                     // eslint-disable-next-line no-console
-                    console.log(res.data.rajaongkir.results[0].costs[1])
+                    console.log(res.data.rajaongkir)
                     localStorage.url = 'kurir'
                     localStorage.jneReg = res.data.rajaongkir.results[0].costs[0].cost[0].value
                     localStorage.etdReg = res.data.rajaongkir.results[0].costs[0].cost[0].etd
