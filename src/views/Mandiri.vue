@@ -170,9 +170,9 @@ export default {
     //   NO. Rekening Pembeli
       fd.append('no_rek', this.rekening)
     //   Nama Kurir
-      fd.append('kurir', localStorage.jenisnamakurir)
+      fd.append('kurir', localStorage.namakurir)
     //   Harga Kurir
-      fd.append('keterangan', localStorage.hargakurir)
+      fd.append('keterangan', localStorage.pilih)
     //   Nominal Kurir
       fd.append('nominal', localStorage.total)
         Axios.post(`${process.env.VUE_APP_API}pembayaran`,fd
