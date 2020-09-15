@@ -52,7 +52,7 @@
     <div class="section">
       <div class="content text-center">
         <div class="convention">
-          <h1>Join Convention</h1>
+          <h1>Join Event</h1>
           <button class="desktop" @click="join">Join</button>
           <a href="https://so.mice.id/9"><button class="mobile">Join</button></a>
         </div>
