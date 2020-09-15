@@ -178,7 +178,7 @@
                                                                         </tr>
                                                                         <tr class="text-bold" style="font-weight: bolder;;border-top: 1px solid black;">
                                                                             <th>Total Keseluruhan</th>
-                                                                            <td></td>
+                                                                            <td>*Sudah Termasuk PPN 10%</td>
                                                                             <td>2</td>
                                                                             <td v-if="tipe == 1">Rp. {{hitung1}}</td>
                                                                             <td v-if="tipe == 2">Rp. {{hitung2}}</td>
