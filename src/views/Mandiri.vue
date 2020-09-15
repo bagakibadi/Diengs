@@ -104,13 +104,14 @@
                                                     <span>a/n</span>
                                                     <p>PT. Prima Mandiri Komunikasi</p>
                                                 </div>
-                                                <form @submit.prevent="uploadFile" class="text-center">
+                                                
+                                                <!-- <form @submit.prevent="uploadFile" class="text-center">
                                                     <h5 for="upload">Silahkan Upload Bukti pembayaran anda disini :</h5>
                                                     <input @change="click" type="file" id="upload" required>
                                                     <div>
                                                         <button type="submit" class="btn btn-primary mt-3" style="width: 200px;height:50px;border-radius:25px">Submit</button>
                                                     </div>
-                                                </form>
+                                                </form> -->
                                             </div>
                                         </div>
                                     </div>
