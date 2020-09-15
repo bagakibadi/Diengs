@@ -112,7 +112,7 @@
                                                 <div class="form-group col-sm-6">
                                                     <label for="kota">Kabupaten</label>
                                                     <select :placeholder="isLoading ? 'Loading...' : 'Silahkan Pilih Kabupaten'" class="form-control" id="kota" v-model="kabupaten">
-                                                        <option selected>-Silahkan Pilih Kabupaten-</option>
+                                                        <option selected >-Silahkan Pilih Kabupaten-</option>
                                                         <option v-for="(kota, index) in kota" 
                                                         :key="index"
                                                         :value="kota.city_id">{{ kota.city_name }}
@@ -209,9 +209,8 @@ export default {
     updateprofile() {
       Axios.post(`${process.env.VUE_APP_API}profile`, {
         alamat: this.profile.alamat,
-        no_hp: this.profile.hp,
-        provinsi: this.provinsi,
-        kabupaten: this.kabupaten,
+        prov_id: this.provinsi,
+        kab_id: this.kabupaten,
         kode_pos: this.profile.pos
       }, {
         headers: {

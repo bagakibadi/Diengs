@@ -110,12 +110,14 @@
                                                         <img src="../assets/images/wa.png" style="width:100px">
                                                     </a>
                                                 </div>
-                                                <form @submit.prevent="uploadFile" class="text-center">
-                                                    <h5 for="upload">Silahkan Upload Bukti pembayaran anda disini :</h5>
-                                                    <input @change="click" type="file" id="upload" required>
-                                                    <div class="form-group form-group-custom mb-4">
+                                                <form @submit.prevent="uploadFile">
+                                                    <div class="text-center">
+                                                        <h5 for="upload">Silahkan Upload Bukti pembayaran anda disini :</h5>
+                                                        <input @change="click" type="file" id="upload" required>
+                                                    </div>
+                                                    <div class="form-group form-group-custom mb-4 mt-3">
                                                         <input type="text" class="form-control" id="rekening" required v-model="rekening">
-                                                        <label for="rekening">No. Rekening</label>
+                                                        <label for="rekening">Masukan No.Rekening Anda</label>
                                                     </div>
                                                     <div>
                                                         <button type="submit" class="btn btn-primary mt-3" style="width: 200px;height:50px;border-radius:25px">Submit</button>
@@ -163,10 +165,15 @@ export default {
     },
     uploadFile() {
       const fd = new FormData()
+    //   Bukti Pembayaran
       fd.append('pembayaran', this.file)
+    //   NO. Rekening Pembeli
       fd.append('no_rek', this.rekening)
-      fd.append('kurir', localStorage.namakurir)
-      fd.append('keterangan', localStorage.pilih)
+    //   Nama Kurir
+      fd.append('kurir', localStorage.jenisnamakurir)
+    //   Harga Kurir
+      fd.append('keterangan', localStorage.hargakurir)
+    //   Nominal Kurir
       fd.append('nominal', localStorage.total)
         Axios.post(`${process.env.VUE_APP_API}pembayaran`,fd
         ,{
