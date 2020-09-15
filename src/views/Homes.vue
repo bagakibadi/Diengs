@@ -1,6 +1,6 @@
 <template>
   <div class="firster">
-    <a href="https://wa.me/08113475177" target="_blank">
+    <a href="https://wa.me/628113475177" target="_blank">
       <div class="contact">
         <img src="../assets/images/wa.png" alt="">
         <h5>Customer Service</h5>

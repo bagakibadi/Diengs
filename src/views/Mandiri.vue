@@ -106,7 +106,7 @@
                                                 </div>
                                                 <div class="d-flex justify-content-center mb-2" style="flex-direction: column; align-items: center">
                                                     <h5>Jika ada Kendala Dalam Pembayaran Silahkan Hubungi Customer Service di WA</h5>
-                                                    <a href="http://wa.me/08113475177" target="_blank">
+                                                    <a href="http://wa.me/628113475177" target="_blank">
                                                         <img src="../assets/images/wa.png" style="width:100px">
                                                     </a>
                                                 </div>
