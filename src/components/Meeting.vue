@@ -28,6 +28,23 @@ export default {
 </script>
 
 <style>
+.chat-container__chat-control{
+  height: auto !important;
+}
+.ReactVirtualized__List{
+  outline: none;
+}
+.chat-box__chat-textarea{
+  outline: none;
+  margin-top: 5px;
+  padding-top: 5px;
+  height: auto !important;
+  border: 1px solid #999;
+  margin-left: 1px;
+}
+#wc-footer{
+  padding: 0 !important;
+}
 .container-zoom {
   width: 70%;
   height: 100%;
