@@ -106,6 +106,7 @@ export default {
           if (res.data.valid === null && res.data.tipe === 0) {
             // eslint-disable-next-line no-console
             console.log('blom valid')
+            localStorage.tipe = res.data.tipe
             localStorage.token = res.data.accessToken
           
             Swal.fire({
@@ -120,6 +121,7 @@ export default {
             }, 2000)
           }
           else if (res.data.valid === 1) {
+            localStorage.tipe = res.data.tipe
             localStorage.token = res.data.accessToken
             Swal.fire({
               position: 'center',

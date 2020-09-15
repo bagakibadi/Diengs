@@ -49,45 +49,14 @@
               </header>
       </div>
     </div>
-    <!-- <div class="penampungnav">
-      <div class="navbar">
-        <div class="logo">
-            <h2 class="logo-light" style="font-family: sans-serif;cursor:pointer" height="35">
-              <b style="color: red;">CH</b>
-              <b style="color: chocolate;">SE</b>
-              <b style="color: dodgerblue;">MI</b>
-              <b style="color: lightgreen;">CE</b>
-            </h2>
-        </div>
-        <div class="float-right">
-          <div class="dropdown d-inline-block">
-              <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <img class="rounded-circle header-profile-user" src="../assets/images/users/avatar-1.jpg" alt="Header Avatar">
-                  <span class="d-none d-sm-inline-block ml-1">{{profileUser.first_name}}</span>
-                  <i class="mdi mdi-chevron-down d-none d-sm-inline-block"></i>
-              </button>
-              <div class="dropdown-menu dropdown-menu-right">
-                  <router-link class="dropdown-item" to="/profile"><i class="mdi mdi-face-profile font-size-16 align-middle mr-1 test"></i> Profile</router-link>
-                  <div class="dropdown-divider"></div>
-                  <router-link class="dropdown-item" to='/logout'><i class="mdi mdi-logout font-size-16 align-middle mr-1 test"></i> Logout</router-link>
-              </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
     <div class="section">
       <div class="content text-center">
-        <!-- <div class="logomobile">
-          <img src="https://i.ibb.co/0njBn65/Layer-3-1.png" alt="">
-        </div> -->
-        <div class="convention">
+        <div class="convention" v-if="tipe != 0">
           <h1>Join Convention</h1>
           <button class="desktop" @click="join">Join</button>
           <a href="https://so.mice.id/5"><button class="mobile">Join</button></a>
         </div>
         <h1>VIRTUAL EVENT DIENG CULTURE FESTIVAL</h1>
-        <!-- <iframe width="800" height="400" src="https://www.youtube.com/embed/4deVCNJq3qc?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-        <!-- <iframe src="https://www.youtube.com/embed/Oi2ygASXK6M?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
         <iframe :src="url[0].url" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
@@ -125,65 +94,6 @@
               <h1>Closing</h1>
               <p>12:00 17 September 2020</p>
             </div>
-            <!-- <div class="judulevent">
-              <h1>OPENING</h1>
-              <p>10.25 - 10.30</p>
-            </div>
-            <div class="judulevent">
-              <h1>Doa</h1>
-              <p>10.30 - 10.35</p>
-            </div>
-            <div class="judulevent">
-              <h1>Laporan Panitia Penyelenggaran
-                Sosialisasi Panduan CHSE
-                Penyelenggaraan Kegiatan MICE
-                dari Kementerian Pariwisata dan
-                Ekonomi Kreatif / Badan Parekraf RI </h1>
-              <p>10.35 - 10.45</p>
-            </div>
-            <div class="judulevent">
-              <h1>Sambutan Wakil Gubernur Bali</h1>
-              <p>10.45 - 10.50</p>
-            </div>
-            <div class="judulevent">
-              <h1>Sambutan Pembukaan dari
-                Kementerian Pariwisata dan Ekonomi
-                Kreatif / Badan Parekraf RI</h1>
-              <p>10.50 – 11.00</p>
-            </div>
-            <div class="judulevent">
-              <h1>Presentasi Rancangan Panduan
-                Kebersihan, Kesehatan,
-                Keselamatan, serta Kelestarian
-                Lingkungan (Cleanliness, Health,
-                Safety and Environmental
-                sustainability/ (CHSE)
-                Penyelenggaraan Kegiatan MICE</h1>
-              <p>11.00 – 12.00</p>
-            </div>
-            <div class="judulevent">
-              <h1>Makan Siang dan Sholat P</h1>
-              <p>12.00 – 13.00</p>
-            </div>
-            <div class="judulevent">
-              <h1>Presentasi Rancangan Panduan
-                Kebersihan, Kesehatan,
-                Keselamatan, serta Kelestarian
-                Lingkungan (Cleanliness, Health,
-                Safety and Environmental
-                sustainability/ (CHSE)
-                Penyelenggaraan Kegiatan MICE
-                </h1>
-              <p>13.00 – 15.30</p>
-            </div>
-            <div class="judulevent">
-              <h1>Penandatanganan Berita Acara </h1>
-              <p>15.30 – 15.45</p>
-            </div>
-            <div class="judulevent">
-              <h1>Penutup</h1>
-              <p>15.45 – 16.00</p>
-            </div> -->
           </div>
         </div>
         <div class="day">
@@ -195,46 +105,6 @@
             </p>
           </div>
         </div>
-        <!-- <div class="chat">
-          <div class="judulchat">
-            <h1 onclick="chat()" class="chats active">Chat</h1>
-            <h1 onclick="feedback()" class="feedbacks">Feedback</h1>
-            <h1 onclick="undian()" class="undians">Undian</h1>
-          </div>
-          <div class="roomss">
-              <div id="roomchat" class="roomchat">
-                  <div class="cardchat">
-                      <div class="imgchat">
-                          <span>io</span>
-                      </div>
-                      <div class="infochat">
-                          <h1></h1>
-                          <div class="isichat">
-                              <p></p>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="chatme">
-                      <div class="isichat fromme">
-                          <p></p>
-                      </div>
-                  </div>
-              </div>
-              <div class="sendmsg">
-                  <input type="hidden" id="user_id" name="user_id" value="<?= $this->session->userdata('id')?>">
-                  <input type="hidden" id="reply_to" name="reply_to" value="0">
-                  <input type="text" id="message" name="message" placeholder="Compose Message">
-                  <button onclick="kirimpesan()"><i class="fa fa-paper-plane"></i></button>
-              </div>
-          </div>
-          <div class="feedback">
-              <textarea cols="10" rows="4" placeholder="Feedback"></textarea>
-              <button>Send</button>
-          </div>
-          <div class="undian">
-              <p>The Winner Is</p>
-          </div>
-      </div> -->
   </div>
     </div>
   </div>
@@ -245,6 +115,11 @@ import { mapState } from 'vuex'
 import Axios from 'axios'
 
 export default {
+  data() {
+    return {
+      tipe: localStorage.tipe
+    }
+  },
   methods: {
     showlogout() {
       document.querySelector('.logout').classList.toggle('showhide');
@@ -308,30 +183,6 @@ export default {
 .float-right{
   margin-right: 50px;
 }
-// .navbar{
-//   z-index: 2;
-//   width: 100%;
-//   height: 100px;
-//   background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
-//   display: flex;
-//   align-items: center;
-//   position: fixed;
-// }
-// .logo{
-//   width: 250px;
-//   height: 100%;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-// }
-// .logo h2 b{
-//   font-size: 30px;
-// }
-// .time{
-//   padding: 10px 15px;
-//   border-radius: 3px;
-//   background: whitesmoke;
-// }
 .judul{
   position: absolute;
   display: flex;

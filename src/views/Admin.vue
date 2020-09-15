@@ -180,8 +180,8 @@
                                                         <td>{{item.tipe}}</td>
                                                         <td><a
                                                         :href="'https://api-dieng.primakom.co.id/images/pembayaran_' +
-                                                        item.id +'.png'">Cek</a></td>
-                                                        <td>{{item.valid}}</td>
+                                                        item.id +'.png'" target="_blank">Cek</a></td>
+                                                        <td>{{item.valid}} <div class="btn btn-primary" @click="valid(item.id)">V</div></td>
                                                         <td class="d-flex justify-content-around">
                                                           <div class="btn btn-warning" @click="edit(item.id)" data-toggle="modal" data-target="#modalSubscriptionForm">Edit</div>
                                                           <div class="btn btn-primary" @click="deleteUser(item.id)">Hapus</div>
@@ -567,7 +567,7 @@
 </template>
 
 <script>
-// eslint-disable-next-line no-unused-vars
+/* eslint-disable no-console */
 import Axios from 'axios'
 import { mapState } from 'vuex'
 import Swal from 'sweetalert2'
@@ -668,6 +668,27 @@ export default {
                     console.log(err)
                 })
             }
+        },
+        valid(id_user) {
+          Axios.get(`${process.env.VUE_APP_API}users/validasi/${id_user}`)
+            .then((res) => {
+              console.log(res)
+              if(res.data.status === true) {
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Update Valid User Success',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+                setTimeout(() => {
+                    this.$router.go('/admin')
+                }, 2000)
+              }
+            })
+            .catch((err) => {
+              console.log(err)
+            })
         },
         edit(id_user) {
             // eslint-disable-next-line no-console

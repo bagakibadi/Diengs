@@ -94,11 +94,15 @@
 </template>
 
 <script>
+import Swal from 'sweetalert2'
 export default {
   methods: {
     free() {
-      localStorage.tipe = 0
-      this.$router.push('/daftar')
+      Swal.fire({
+        icon: 'warning',
+        title: 'Oops...',
+        text: 'Maaf Kuota Gratis Sudah Habis Silahkan Pilih Paket',
+      })
     },
     paket1() {
       localStorage.tipe = 1

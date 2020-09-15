@@ -1,7 +1,7 @@
 <template>
   <div class="meeting">
     <div class="container-zoom">
-      <ZoomFrame :nickname="nickname" :meetingId="meetingId" :password="password" :role="role"/>
+      <ZoomFrame :nickname="nickname" :meetingId="meetingId"/>
     </div>
   </div>
 </template>
@@ -15,8 +15,6 @@ export default {
       return {
           nickname: '',
           meetingId: '',
-          password: '',
-          role: ''
       }
   },
   components: {
@@ -25,8 +23,6 @@ export default {
   created : function (){
       this.nickname = this.$route.query.nickname;
       this.meetingId = this.$route.query.meetingId;
-      this.password = this.$route.query.password;
-      this.role = this.$route.query.role;
   }
 };
 </script>

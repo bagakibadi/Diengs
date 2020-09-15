@@ -44,8 +44,6 @@ export default {
   props: {
     nickname: String,
     meetingId: String,
-    password: String,
-    role: String
   },
   created: function() {
     // Meeting config object
