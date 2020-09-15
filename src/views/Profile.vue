@@ -101,7 +101,7 @@
                                                 </div> -->
                                                 <div class="form-group col-sm-6">
                                                     <label for="provinsi">Provinsi</label>
-                                                    <select class="form-control" id="provinsi" v-model="profile.provinsi" @change="getKota">
+                                                    <select class="form-control" id="provinsi" v-model="provinsi" @change="getKota">
                                                         <option selected>Silahkan Pilih Provinsi</option>
                                                         <option v-for="(provs, index) in ongkir" 
                                                         :key="index"
@@ -111,7 +111,7 @@
                                                 </div>
                                                 <div class="form-group col-sm-6">
                                                     <label for="kota">Kabupaten</label>
-                                                    <select :placeholder="isLoading ? 'Loading...' : 'Silahkan Pilih Kabupaten'" class="form-control" id="kota" v-model="profile.kabupaten">
+                                                    <select :placeholder="isLoading ? 'Loading...' : 'Silahkan Pilih Kabupaten'" class="form-control" id="kota" v-model="kabupaten">
                                                         <option selected >-Silahkan Pilih Kabupaten-</option>
                                                         <option v-for="(kota, index) in kota" 
                                                         :key="index"
@@ -193,7 +193,7 @@ export default {
     getKota() {
       this.$store.dispatch('startFetch')
       this.$store.dispatch('getApi', {
-        url: `rajaongkir/kota/${this.profile.provinsi}`,
+        url: `rajaongkir/kota/${this.provinsi}`,
         mutation: "GET_KOTA"
       })
         .then((res) => {
@@ -209,8 +209,8 @@ export default {
     updateprofile() {
       Axios.post(`${process.env.VUE_APP_API}profile`, {
         alamat: this.profile.alamat,
-        provinsi: this.profile.provinsi,
-        kabupaten: this.profile.kabupaten,
+        provinsi: this.provinsi,
+        kabupaten: this.kabupaten,
         kode_pos: this.profile.kode_pos
       }, {
         headers: {
@@ -223,7 +223,7 @@ export default {
           if (res.data.msg === "Berhasil") {
             // eslint-disable-next-line no-console
             console.log(res)
-            Axios.get(`${process.env.VUE_APP_API}rajaongkir/ongkos/37/${this.profile.kabupaten}/1/jne`)
+            Axios.get(`${process.env.VUE_APP_API}rajaongkir/ongkos/37/${this.kabupaten}/1/jne`)
                 .then((res) => {
                     // eslint-disable-next-line no-console
                     console.log(res.data.rajaongkir)
