@@ -101,7 +101,7 @@ export default {
       Swal.fire({
         icon: 'warning',
         title: 'Oops...',
-        text: 'Maaf Kuota Gratis Sudah Habis Silahkan Pilih Paket',
+        text: 'Maaf Kuota Gratis Sudah Habis Silahkan Pilih Paket Yang Lain',
       })
     },
     paket1() {
