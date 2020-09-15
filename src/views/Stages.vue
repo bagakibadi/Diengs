@@ -83,7 +83,7 @@
         <div class="convention">
           <h1>Join Convention</h1>
           <button class="desktop" @click="join">Join</button>
-          <button class="mobile"><a href="https://so.mice.id/5">Join</a></button>
+          <a href="https://so.mice.id/5"><button class="mobile">Join</button></a>
         </div>
         <h1>VIRTUAL EVENT DIENG CULTURE FESTIVAL</h1>
         <!-- <iframe width="800" height="400" src="https://www.youtube.com/embed/4deVCNJq3qc?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->

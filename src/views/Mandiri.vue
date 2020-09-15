@@ -100,7 +100,7 @@
                                                 <h5>Ke Rekening Mandiri :</h5>
                                                 <div class="card d-flex align-items-center" style="flex-direction: column; padding: 20px 20px 10px 20px; border: 1px solid #999;">
                                                     <img src="https://statik.tempo.co/data/2018/02/06/id_682386/682386_720.jpg" style="width:150px">
-                                                    <p class="mb-0 mt-2">164-000-1873044</p>
+                                                    <p class="mb-0 mt-2">164-000-1873043</p>
                                                     <span>a/n</span>
                                                     <p>PT. Prima Mandiri Komunikasi</p>
                                                 </div>
