@@ -104,7 +104,7 @@
                                                     <span>a/n</span>
                                                     <p>PT. Prima Mandiri Komunikasi</p>
                                                 </div>
-                                                
+
                                                 <!-- <form @submit.prevent="uploadFile" class="text-center">
                                                     <h5 for="upload">Silahkan Upload Bukti pembayaran anda disini :</h5>
                                                     <input @change="click" type="file" id="upload" required>
@@ -171,6 +171,10 @@ export default {
                     'Silahkan Logout dan Hubungi Admin untuk meminta verifikasi',
                     'success'
                 )
+                setTimeout(() => {
+                    localStorage.clear()
+                    this.$router.push('/')
+                }, 2000)
                 } else{
                 // eslint-disable-next-line no-console
                 console.log('salah')

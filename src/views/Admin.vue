@@ -163,6 +163,7 @@
                                                         <th>Last Name</th>
                                                         <th>Email</th>
                                                         <th>Username</th>
+                                                        <th>Tipe User</th>
                                                         <th>Cek Pembayaran</th>
                                                         <th>Verified</th>
                                                         <th>Action</th>
@@ -174,6 +175,7 @@
                                                         <td>{{item.last_name}}</td>
                                                         <td>{{item.email}}</td>
                                                         <td>{{item.username}}</td>
+                                                        <td>{{item.tipe}}</td>
                                                         <td><a
                                                         :href="'https://api-dieng.primakom.co.id/images/pembayaran_' +
                                                         item.id +'.png'">Cek</a></td>
