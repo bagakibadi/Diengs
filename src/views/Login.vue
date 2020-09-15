@@ -119,7 +119,7 @@ export default {
               this.$router.push('/stages')
             }, 2000)
           }
-          else if (res.data.status === 3) {
+          else if (res.data.status === false) {
             // eslint-disable-next-line no-console
             console.log('salah')
             Swal.fire({
@@ -160,6 +160,7 @@ export default {
             })
           }
           else if (res.data.valid === 1) {
+            localStorage.token = res.data.accessToken
             Swal.fire({
               position: 'center',
               icon: 'success',
