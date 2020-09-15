@@ -12,7 +12,8 @@ export default new vuex.Store({
     profileUser: {},
     url: null,
     ongkir: [],
-    kota: []
+    kota: [],
+    isLoading: false
   },
   mutations: {
     GET_USER(state, data) {
@@ -29,9 +30,22 @@ export default new vuex.Store({
     },
     GET_KOTA(state, data) {
       state.kota = data.rajaongkir.results
+    },
+    START_FETCH(state) {
+      state.isLoading = true
+    },
+    END_FETCH(state) {
+      state.isLoading = false
     }
   },
   actions: {
+    // eslint-disable-next-line no-unused-vars
+    startFetch(context) {
+      context.commit('START_FETCH')
+    },
+    endFetch(context) {
+      context.commit('END_FETCH')
+    },
     // eslint-disable-next-line no-unused-vars
     getOngkir(context) {
       return new Promise((resolve, reject) => {

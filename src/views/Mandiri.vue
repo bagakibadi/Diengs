@@ -70,7 +70,7 @@
                         <div class="container-fluid">
                             <div class="row align-items-center">
                                 <div class="col-md-8">
-                                    <h4 class="page-title mb-1">Edit Profile</h4>
+                                    <h4 class="page-title mb-1">Bayar</h4>
                                     <ol class="breadcrumb m-0">
                                     <li class="breadcrumb-item active">Selamat datang di website Event Dieng</li>
                                     </ol>
@@ -105,14 +105,18 @@
                                                     <p>PT. Prima Mandiri Komunikasi</p>
                                                 </div>
                                                 <div class="d-flex justify-content-center mb-2" style="flex-direction: column; align-items: center">
-                                                    <h5>Jika ada Kendala Dalam Pembayaran Silahkan Hubungi Custemer Service di WA</h5>
+                                                    <h5>Jika ada Kendala Dalam Pembayaran Silahkan Hubungi Customer Service di WA</h5>
                                                     <a href="http://wa.me/08113475177" target="_blank">
-                                                        <img src="https://w7.pngwing.com/pngs/110/230/png-transparent-whatsapp-application-software-message-icon-whatsapp-logo-whats-app-logo-logo-grass-mobile-phones.png" style="width:100px">
+                                                        <img src="../assets/images/wa.png" style="width:100px">
                                                     </a>
                                                 </div>
                                                 <form @submit.prevent="uploadFile" class="text-center">
                                                     <h5 for="upload">Silahkan Upload Bukti pembayaran anda disini :</h5>
                                                     <input @change="click" type="file" id="upload" required>
+                                                    <div class="form-group form-group-custom mb-4">
+                                                        <input type="text" class="form-control" id="rekening" required v-model="rekening">
+                                                        <label for="rekening">No. Rekening</label>
+                                                    </div>
                                                     <div>
                                                         <button type="submit" class="btn btn-primary mt-3" style="width: 200px;height:50px;border-radius:25px">Submit</button>
                                                     </div>
@@ -147,7 +151,10 @@ export default {
   data() {
     return {
       total: localStorage.total,
-      file: null
+      file: null,
+      rekening: null,
+      namakurir: null,
+      hargakurir: null
     }
   },
   methods: {
@@ -157,7 +164,9 @@ export default {
     uploadFile() {
       const fd = new FormData()
       fd.append('pembayaran', this.file)
-      fd.append('keterangan', 'test')
+      fd.append('no_rek', this.rekening)
+      fd.append('kurir', localStorage.namakurir)
+      fd.append('keterangan', localStorage.pilih)
       fd.append('nominal', localStorage.total)
         Axios.post(`${process.env.VUE_APP_API}pembayaran`,fd
         ,{

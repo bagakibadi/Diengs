@@ -101,7 +101,7 @@
                                                 </div> -->
                                                 <div class="form-group col-sm-6">
                                                     <label for="provinsi">Provinsi</label>
-                                                    <select class="form-control" id="provinsi" v-model="provinsi">
+                                                    <select class="form-control" id="provinsi" v-model="provinsi" @change="getKota">
                                                         <option selected>Silahkan Pilih Provinsi</option>
                                                         <option v-for="(provs, index) in ongkir" 
                                                         :key="index"
@@ -111,7 +111,7 @@
                                                 </div>
                                                 <div class="form-group col-sm-6">
                                                     <label for="kota">Kabupaten</label>
-                                                    <select class="form-control" id="kota" v-model="kabupaten">
+                                                    <select :placeholder="isLoading ? 'Loading...' : 'Silahkan Pilih Kabupaten'" class="form-control" id="kota" v-model="kabupaten">
                                                         <option selected>-Silahkan Pilih Kabupaten-</option>
                                                         <option v-for="(kota, index) in kota" 
                                                         :key="index"
@@ -147,6 +147,10 @@
 </template>
 
 <script>
+
+/* eslint-disable no-console */
+
+
 import Axios from 'axios'
 import Swal from 'sweetalert2'
 import { mapState } from 'vuex'
@@ -165,6 +169,7 @@ export default {
       prov: [],
       provinsi: null,
       kabupaten: null,
+      news: [],
     //   kota: []
     }
   },
@@ -185,12 +190,22 @@ export default {
             console.log(err)
         })
     },
-    // getKota() {
-    //   this.$store.dispatch('getApi', {
-    //     url: `rajaongkir/kota/${this.provinsi}`,
-    //     mutation: "GET_KOTA"
-    //   })
-    // },
+    getKota() {
+      this.$store.dispatch('startFetch')
+      this.$store.dispatch('getApi', {
+        url: `rajaongkir/kota/${this.provinsi}`,
+        mutation: "GET_KOTA"
+      })
+        .then((res) => {
+            this.$store.dispatch('endFetch')
+            // eslint-disable-next-line no-console
+            console.log(res)
+        })
+        .catch((err) => {
+            console.log(err)
+            this.$store.dispatch('endFetch')
+        })
+    },
     updateprofile() {
       Axios.post(`${process.env.VUE_APP_API}profile`, {
         alamat: this.profile.alamat,
@@ -241,7 +256,7 @@ export default {
           // eslint-disable-next-line no-console
           console.log(err)
         })
-    }
+    },
   },
   created() {
       // eslint-disable-next-line no-console
@@ -266,6 +281,7 @@ export default {
       }
   },
   computed: {
+    ...mapState(['isLoading']),
     ...mapState(['profileUser']),
     ...mapState(['ongkir']),
     ...mapState(['kota']),
@@ -273,13 +289,19 @@ export default {
   mounted() {
     this.$store.dispatch('getAcc')
     this.$store.dispatch('getOngkir')
-    // this.getKota()
   },
   updated() {
-    this.$store.dispatch('getApi', {
-        url: `rajaongkir/kota/${this.provinsi}`,
-        mutation: "GET_KOTA"
-    })
+      // eslint-disable-next-line no-console
+    // if (this.provinsi === null) {
+    //   return;
+    // }
+    // if (this.kota.length > 0) {
+    //   return
+    // }
+    // this.$store.dispatch('getApi', {
+    //     url: `rajaongkir/kota/${this.provinsi}`,
+    //     mutation: "GET_KOTA"
+    // })
   }
 
 }

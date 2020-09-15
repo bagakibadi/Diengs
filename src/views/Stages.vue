@@ -8,7 +8,8 @@
                           <div class="float-right">
                               <div class="dropdown d-inline-block">
                                   <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                      <img class="rounded-circle header-profile-user" src="../assets/images/users/avatar-1.jpg" alt="Header Avatar">
+                                      <!-- <img class="rounded-circle header-profile-user" src="../assets/images/users/avatar-1.jpg" alt="Header Avatar"> -->
+                                      <i class="fa fa-user"></i>
                                       <span class="d-none d-sm-inline-block ml-1">{{profileUser.first_name}}</span>
                                       <i class="mdi mdi-chevron-down d-none d-sm-inline-block"></i>
                                   </button>
@@ -76,7 +77,7 @@
       </div>
     </div> -->
     <div class="section">
-      <div class="content">
+      <div class="content text-center">
         <!-- <div class="logomobile">
           <img src="https://i.ibb.co/0njBn65/Layer-3-1.png" alt="">
         </div> -->
@@ -192,16 +193,6 @@
           <div class="paragraf">
             <p>Dieng Culture Festival merupakan agenda tahunan yang diselenggarakan oleh masyarakat Dieng dengan dua rangkaian acara unggulannya yaitu Prosesi Cukur Rambut Gembel dan Jazz Atas Awan. Sejak pertama kali diadakan pada 2010, Dieng Culture Festival tidak pernah sepi pengunjung. Menyesuaikan protokol kesehatan dalam menghadapi pandemi, Dieng Culture Festival 2020 hadir dengan konsep virtual.
             </p>
-          </div>
-          <div class="attachment">
-            <div class="judulattachment">
-              <h1>Attachment</h1>
-            </div>
-            <div class="centerattachment">
-              <a href="https://mice.id/PanduanCHSE-MICE//download/panduan.pdf" target="_blank"><i class="fas fa-file"></i></a>
-              <!-- <h1>Attachment File is Empty</h1>
-              <p>Admin Booth hasn't attached any files yet.</p> -->
-            </div>
           </div>
         </div>
         <div class="chat">
@@ -725,7 +716,7 @@ export default {
 }
 @media only screen and (max-width: 600px) {
   .logos{
-    margin-left: -250px;
+    margin-left: -170px;
   }
   .desktop{
     display: none !important;
