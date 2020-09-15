@@ -53,7 +53,7 @@
                                                     <label for="userpassword">Password</label>
                                                 </div>
                                                 <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input" id="term-conditionCheck">
+                                                    <input type="checkbox" class="custom-control-input" required id="term-conditionCheck">
                                                     <label class="custom-control-label font-weight-normal"
                                                         for="term-conditionCheck">Saya menerima <a href="#"
                                                             class="text-primary">Syarat dan Ketentuan</a></label>

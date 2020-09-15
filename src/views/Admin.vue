@@ -159,6 +159,7 @@
                                                 <thead>
                                                     <tr>
                                                         <!-- <th>Start date</th> -->
+                                                        <th>No</th>
                                                         <th>First Name</th>
                                                         <th>Last Name</th>
                                                         <th>Email</th>
@@ -170,7 +171,8 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr v-for="item in allUser" :key="item.id">
+                                                    <tr v-for="(item, index) in allUser" :key="index">
+                                                        <td>{{index+1}}</td>
                                                         <td>{{item.first_name}}</td>
                                                         <td>{{item.last_name}}</td>
                                                         <td>{{item.email}}</td>

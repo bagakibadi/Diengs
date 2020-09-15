@@ -87,7 +87,8 @@
         </div>
         <h1>VIRTUAL EVENT DIENG CULTURE FESTIVAL</h1>
         <!-- <iframe width="800" height="400" src="https://www.youtube.com/embed/4deVCNJq3qc?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-        <iframe src="https://www.youtube.com/embed/Oi2ygASXK6M?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <!-- <iframe src="https://www.youtube.com/embed/Oi2ygASXK6M?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+        <iframe :src="url[0].url" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
     <div class="section2">
