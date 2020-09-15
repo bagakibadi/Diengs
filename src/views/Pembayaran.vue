@@ -545,7 +545,6 @@ export default {
   methods: {
     next() {
       if (localStorage.tipe == 1) {
-        localStorage.namakurir = 
         localStorage.total = this.hitung1
         localStorage.url = 'bayar'
         this.$router.push('/bayar')
