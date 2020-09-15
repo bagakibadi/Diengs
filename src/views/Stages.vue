@@ -195,7 +195,7 @@
             </p>
           </div>
         </div>
-        <div class="chat">
+        <!-- <div class="chat">
           <div class="judulchat">
             <h1 onclick="chat()" class="chats active">Chat</h1>
             <h1 onclick="feedback()" class="feedbacks">Feedback</h1>
@@ -234,7 +234,7 @@
           <div class="undian">
               <p>The Winner Is</p>
           </div>
-      </div>
+      </div> -->
   </div>
     </div>
   </div>
@@ -430,7 +430,7 @@ export default {
       border-radius: 8px;
 }
 .schedule{
-        width: calc(100% / 3);
+        width: calc(100% / 2);
         height: 469px;
         border-right: 0.5px solid rgb(201, 186, 186);
         box-sizing: border-box;
@@ -460,7 +460,7 @@ export default {
               font-size: 14px;
             }
 .day{
-  width: calc(100% / 3);
+  width: calc(100% / 2);
   height: 469px;
   border-right: 0.5px solid rgb(201, 186, 186);
   box-sizing: border-box;

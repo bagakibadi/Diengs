@@ -1,10 +1,11 @@
 <template>
   <div class="firster">
-    <a href="wa.me/08113475177"></a>
-    <div class="contact">
-      <img src="../assets/images/wa.png" alt="">
-      <h5>Customer Service</h5>
-    </div>
+    <a href="https://wa.me/08113475177" target="_blank">
+      <div class="contact">
+        <img src="../assets/images/wa.png" alt="">
+        <h5>Customer Service</h5>
+      </div>
+    </a>
     <div class="contains">
       <div class="navfirst">
         <div class="nav">
