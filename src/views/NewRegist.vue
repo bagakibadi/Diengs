@@ -94,15 +94,17 @@
 </template>
 
 <script>
-import Swal from 'sweetalert2'
+// import Swal from 'sweetalert2'
 export default {
   methods: {
     free() {
-      Swal.fire({
-        icon: 'warning',
-        title: 'Oops...',
-        text: 'Maaf Kuota Gratis Sudah Habis Silahkan Pilih Paket Yang Lain',
-      })
+      // Swal.fire({
+      //   icon: 'warning',
+      //   title: 'Oops...',
+      //   text: 'Maaf Kuota Gratis Sudah Habis Silahkan Pilih Paket Yang Lain',
+      // })
+      localStorage.tipe = 0
+      this.$router.push('/daftar')
     },
     paket1() {
       localStorage.tipe = 1
