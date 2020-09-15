@@ -55,7 +55,7 @@ export default {
       meetingNumber: this.meetingId,
       userName: this.nickname,
       passWord: localStorage.pass,
-      leaveUrl: "https://mice.id",
+      leaveUrl: "https://dieng.mice.id/stages",
       role: localStorage.role
     };
 
@@ -73,7 +73,7 @@ export default {
 
     // join function
     ZoomMtg.init({
-      leaveUrl: "http://mice.id",
+      leaveUrl: "http://dieng.mice.id/stages",
       isSupportAV: true,
       success: () => {
         ZoomMtg.join({
