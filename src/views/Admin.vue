@@ -163,6 +163,7 @@
                                                         <th>Last Name</th>
                                                         <th>Email</th>
                                                         <th>Username</th>
+                                                        <th>Cek Pembayaran</th>
                                                         <th>Verified</th>
                                                         <th>Action</th>
                                                     </tr>
@@ -173,6 +174,9 @@
                                                         <td>{{item.last_name}}</td>
                                                         <td>{{item.email}}</td>
                                                         <td>{{item.username}}</td>
+                                                        <td><a
+                                                        :href="'https://api-dieng.primakom.co.id/images/pembayaran_' +
+                                                        item.id +'.png'">Cek</a></td>
                                                         <td>{{item.valid}}</td>
                                                         <td class="d-flex justify-content-around">
                                                           <div class="btn btn-warning" @click="edit(item.id)" data-toggle="modal" data-target="#modalSubscriptionForm">Edit</div>
