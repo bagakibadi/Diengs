@@ -103,7 +103,7 @@ export default {
         .then((res) => {
           // eslint-disable-next-line no-console
           console.log(res)
-          if (res.data.valid === null) {
+          if (res.data.valid === null && res.data.tipe === 0) {
             // eslint-disable-next-line no-console
             console.log('blom valid')
             localStorage.token = res.data.accessToken
@@ -128,9 +128,38 @@ export default {
               text: 'Email Atau Password Salah!',
             })
           }
-          else if (res.data.tipe === 0) {
-            localStorage.token = res.data.accessToken
+          // else if (res.data.tipe === 0) {
+          //   localStorage.token = res.data.accessToken
           
+          //   Swal.fire({
+          //     position: 'center',
+          //     icon: 'success',
+          //     title: 'Login Success',
+          //     showConfirmButton: false,
+          //     timer: 1500
+          //   })
+          //   setTimeout(() => {
+          //     this.$router.push('/stages')
+          //   }, 2000)
+          // }
+          else if (res.data.tipe === 1 || res.data.tipe === 2 && res.data.valid === null && !localStorage.url) {          
+            // Swal.fire({
+            //   position: 'center',
+            //   icon: 'success',
+            //   title: 'Login Success',
+            //   showConfirmButton: false,
+            //   timer: 1500
+            // })
+            // setTimeout(() => {
+            //   this.$router.push('/profile')
+            // }, 2000)
+            Swal.fire({
+              icon: 'error',
+              title: 'Akun anda belum diaktivasi',
+              text: 'Silahkan tunggu beberapa menit atau hubungi Admin untuk verifikasi',
+            })
+          }
+          else if (res.data.valid === 1) {
             Swal.fire({
               position: 'center',
               icon: 'success',
@@ -140,20 +169,6 @@ export default {
             })
             setTimeout(() => {
               this.$router.push('/stages')
-            }, 2000)
-          }
-          else if (res.data.tipe === 1 || res.data.tipe === 2) {
-            localStorage.token = res.data.accessToken
-          
-            Swal.fire({
-              position: 'center',
-              icon: 'success',
-              title: 'Login Success',
-              showConfirmButton: false,
-              timer: 1500
-            })
-            setTimeout(() => {
-              this.$router.push('/profile')
             }, 2000)
           }
           else{
@@ -178,7 +193,12 @@ export default {
   },
   created() {
     if (localStorage.token) {
-      this.$router.push('/profile')
+      // this.$router.push('/profile')
+      if (localStorage.url) {
+        this.$router.push(`/${localStorage.url}`)
+      } else {
+        this.$router.push('/stages')
+      }
     }
   }
 }

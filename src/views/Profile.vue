@@ -138,21 +138,6 @@
                 </div>
                 <!-- End Page-content -->
 
-
-                <footer class="footer">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                2020 © Primakom.
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="text-sm-right d-none d-sm-block">
-                                    Crafted with by Primakom
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
             </div>
             <!-- end main content-->
 
@@ -228,6 +213,7 @@ export default {
                 .then((res) => {
                     // eslint-disable-next-line no-console
                     console.log(res.data.rajaongkir.results[0].costs[1])
+                    localStorage.url = 'kurir'
                     localStorage.jneReg = res.data.rajaongkir.results[0].costs[0].cost[0].value
                     localStorage.etdReg = res.data.rajaongkir.results[0].costs[0].cost[0].etd
                     localStorage.jneOke = res.data.rajaongkir.results[0].costs[1].cost[0].value

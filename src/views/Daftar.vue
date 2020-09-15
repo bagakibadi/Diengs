@@ -172,6 +172,7 @@ export default {
                     // eslint-disable-next-line no-console
                     console.log(res)
                     localStorage.token = res.data.accessToken
+                    localStorage.url = 'profile'
                     Swal.fire({
                       position: 'center',
                       icon: 'success',

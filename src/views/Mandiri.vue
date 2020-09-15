@@ -123,21 +123,6 @@
                 </div>
                 <!-- End Page-content -->
 
-
-                <footer class="footer">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                2020 © Primakom.
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="text-sm-right d-none d-sm-block">
-                                    Crafted with by Primakom
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
             </div>
             <!-- end main content-->
 
@@ -182,7 +167,7 @@ export default {
                 console.log('bener')
                 Swal.fire(
                     'Upload Foto Berhasil',
-                    'Silahkan Hubungi Admin untuk meminta verifikasi',
+                    'Silahkan Logout dan Hubungi Admin untuk meminta verifikasi',
                     'success'
                 )
                 } else{
