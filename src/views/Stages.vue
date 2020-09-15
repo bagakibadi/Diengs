@@ -51,7 +51,7 @@
     </div>
     <div class="section">
       <div class="content text-center">
-        <div class="convention" v-if="tipe != 0">
+        <div class="convention">
           <h1>Join Convention</h1>
           <button class="desktop" @click="join">Join</button>
           <a href="https://so.mice.id/5"><button class="mobile">Join</button></a>
