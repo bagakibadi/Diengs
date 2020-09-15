@@ -119,6 +119,19 @@ export default {
               this.$router.push('/stages')
             }, 2000)
           }
+          else if (res.data.valid === 1) {
+            localStorage.token = res.data.accessToken
+            Swal.fire({
+              position: 'center',
+              icon: 'success',
+              title: 'Login Success',
+              showConfirmButton: false,
+              timer: 1500
+            })
+            setTimeout(() => {
+              this.$router.push('/stages')
+            }, 2000)
+          }
           else if (res.data.status === false) {
             // eslint-disable-next-line no-console
             console.log('salah')
@@ -135,19 +148,7 @@ export default {
               text: 'Silahkan tunggu beberapa menit atau hubungi Admin untuk verifikasi',
             })
           }
-          else if (res.data.valid === 1) {
-            localStorage.token = res.data.accessToken
-            Swal.fire({
-              position: 'center',
-              icon: 'success',
-              title: 'Login Success',
-              showConfirmButton: false,
-              timer: 1500
-            })
-            setTimeout(() => {
-              this.$router.push('/stages')
-            }, 2000)
-          }
+          
           else{
             localStorage.token = res.data.accessToken
             Swal.fire({
