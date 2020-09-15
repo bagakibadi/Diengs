@@ -54,7 +54,7 @@
         <div class="convention">
           <h1>Join Convention</h1>
           <button class="desktop" @click="join">Join</button>
-          <a href="https://so.mice.id/5"><button class="mobile">Join</button></a>
+          <a href="https://so.mice.id/9"><button class="mobile">Join</button></a>
         </div>
         <h1>VIRTUAL EVENT DIENG CULTURE FESTIVAL</h1>
         <iframe :src="url[0].url+'?autoplay=1'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
