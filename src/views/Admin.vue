@@ -155,40 +155,42 @@
                                         <div class="card-body">
                                             <h5 class="header-title mb-4">Manajemen User</h5>
                                             <p></p>
-                                            <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-                                                <thead>
-                                                    <tr>
-                                                        <!-- <th>Start date</th> -->
-                                                        <th>No</th>
-                                                        <th>First Name</th>
-                                                        <th>Last Name</th>
-                                                        <th>Email</th>
-                                                        <th>Username</th>
-                                                        <th>Tipe User</th>
-                                                        <th>Cek Pembayaran</th>
-                                                        <th>Verified</th>
-                                                        <th>Action</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr v-for="(item, index) in allUser" :key="index">
-                                                        <td>{{index+1}}</td>
-                                                        <td>{{item.first_name}}</td>
-                                                        <td>{{item.last_name}}</td>
-                                                        <td>{{item.email}}</td>
-                                                        <td>{{item.username}}</td>
-                                                        <td>{{item.tipe}}</td>
-                                                        <td><a
-                                                        :href="'https://api-dieng.primakom.co.id/images/pembayaran_' +
-                                                        item.id +'.png'" target="_blank">Cek</a></td>
-                                                        <td>{{item.valid}} <div class="btn btn-primary" @click="valid(item.id)">V</div></td>
-                                                        <td class="d-flex justify-content-around">
-                                                          <div class="btn btn-warning" @click="edit(item.id)" data-toggle="modal" data-target="#modalSubscriptionForm">Edit</div>
-                                                          <div class="btn btn-primary" @click="deleteUser(item.id)">Hapus</div>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
+                                            <div class="penampung">
+                                                <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                                    <thead>
+                                                        <tr>
+                                                            <!-- <th>Start date</th> -->
+                                                            <th>No</th>
+                                                            <th>First Name</th>
+                                                            <th>Last Name</th>
+                                                            <th>Email</th>
+                                                            <th>Username</th>
+                                                            <th>Tipe User</th>
+                                                            <th>Cek Pembayaran</th>
+                                                            <th>Verified</th>
+                                                            <th>Action</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr v-for="(item, index) in allUser" :key="index">
+                                                            <td>{{index+1}}</td>
+                                                            <td>{{item.first_name}}</td>
+                                                            <td>{{item.last_name}}</td>
+                                                            <td>{{item.email}}</td>
+                                                            <td>{{item.username}}</td>
+                                                            <td>{{item.tipe}}</td>
+                                                            <td><a
+                                                            :href="'https://api-dieng.primakom.co.id/images/pembayaran_' +
+                                                            item.id +'.png'" target="_blank">Cek</a></td>
+                                                            <td>{{item.valid}} <div class="btn btn-primary" @click="valid(item.id)">V</div></td>
+                                                            <td class="d-flex justify-content-around">
+                                                            <div class="btn btn-warning" @click="edit(item.id)" data-toggle="modal" data-target="#modalSubscriptionForm">Edit</div>
+                                                            <div class="btn btn-primary" @click="deleteUser(item.id)">Hapus</div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
                                         </div>
                                     </div>
                                 </div> <!-- end col -->
@@ -727,4 +729,17 @@ export default {
   @import '../assets/libs/nestable2/jquery.nestable.min.css';
   @import '../assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css';
   @import '../assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css';
+</style>
+
+<style lang="scss" scoped>
+.penampung{
+  position: relative;
+  width: 100%;
+  overflow-x: auto;
+//   table{
+//       width: 100%;
+//       overflow: hidden;
+//       overflow-x: auto;
+//   }
+}
 </style>
