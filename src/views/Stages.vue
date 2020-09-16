@@ -217,7 +217,7 @@ export default {
   width: 100%;
   height: calc(100vh - 150px);
   /* background: whitesmoke; */
-  background: url("https://i.ibb.co/LzW6HMT/mice3.jpg");
+  background: url("https://i.ibb.co/k8v5SZq/Background-stage.png");
   background-size: cover;
   background-position: center center;
 }
