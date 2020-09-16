@@ -128,7 +128,7 @@ export default {
     },
     join() {
       Swal.fire(
-        'Join Only for Mobile Device',
+        'Join from Mobile Device Only',
         ' ',
         // 'Join Hanya Untuk ',
         'success'
