@@ -53,8 +53,8 @@
       <div class="content text-center">
         <div class="convention">
           <h1>Join Event</h1>
-          <!-- <button class="desktop" @click="join">Join</button> -->
-          <a href="https://so.mice.id/9"><button>Join</button></a>
+          <button class="desktop" @click="join">Join</button>
+          <a href="https://so.mice.id/9"><button class="mobile">Join</button></a>
         </div>
         <h1>VIRTUAL EVENT DIENG CULTURE FESTIVAL</h1>
         <iframe :src="url[0].url+'?autoplay=1'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -113,6 +113,7 @@
 <script>
 import { mapState } from 'vuex'
 import Axios from 'axios'
+import Swal from 'sweetalert2'
 
 export default {
   data() {
@@ -125,7 +126,13 @@ export default {
       document.querySelector('.logout').classList.toggle('showhide');
     },
     join() {
-      this.$router.push(`/meeting?nickname=${localStorage.getItem('name')}&meetingId=${localStorage.getItem('meet')}`)
+      Swal.fire(
+        'Join Only for Mobile Device',
+        ' ',
+        // 'Join Hanya Untuk ',
+        'success'
+      )
+      // this.$router.push(`/meeting?nickname=${localStorage.getItem('name')}&meetingId=${localStorage.getItem('meet')}`)
     }
   },
   computed: {
@@ -562,12 +569,18 @@ export default {
 .desktop{
   display: block;
 }
+.mobile{
+  display: none;
+}
 @media only screen and (max-width: 600px) {
   .logos{
     margin-left: -170px;
   }
   .desktop{
     display: none !important;
+  }
+  .mobile{
+    display: block !important;
   }
   iframe{
     width: 96% !important;
