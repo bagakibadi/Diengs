@@ -22,7 +22,7 @@
                           </div>
 
                           <!-- LOGO -->
-                          <div class="navbar-brand-box logos">
+                          <div class="navbar-brand-box logos d-flex ml-3">
                               <router-link to="/" class="logo logo-dark">
                                   <span class="logo-sm">
                                       <img src="../assets/images/miceshadow.png" alt="" height="45">
@@ -40,6 +40,7 @@
                                       <img src="../assets/images/miceshadow.png" alt="" height="45">
                                   </span>
                               </router-link>
+                                            <div class="powr-hit-counter" id="1d584f30_1600246592"></div>
                           </div>
 
                           <button type="button" class="btn btn-sm mr-2 font-size-16 d-lg-none header-item waves-effect waves-light" data-toggle="collapse" data-target="#topnav-menu-content">
@@ -105,12 +106,12 @@
             </p>
           </div>
         </div>
-  </div>
+      </div>
     </div>
   </div>
 </template>
-
 <script>
+
 import { mapState } from 'vuex'
 import Axios from 'axios'
 import Swal from 'sweetalert2'
