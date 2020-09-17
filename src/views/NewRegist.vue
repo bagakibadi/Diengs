@@ -98,13 +98,13 @@
 export default {
   methods: {
     free() {
-      // Swal.fire({
-      //   icon: 'warning',
-      //   title: 'Oops...',
-      //   text: 'Maaf Kuota Gratis Sudah Habis Silahkan Pilih Paket Yang Lain',
-      // })
-      localStorage.tipe = 0
-      this.$router.push('/daftar')
+      Swal.fire({
+        icon: 'warning',
+        title: 'Oops...',
+        text: 'Maaf Kuota Gratis Sudah Habis Silahkan Pilih Paket Yang Lain',
+      })
+      // localStorage.tipe = 0
+      // this.$router.push('/daftar')
     },
     paket1() {
       localStorage.tipe = 1
